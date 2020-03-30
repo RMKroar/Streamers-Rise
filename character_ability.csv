@@ -1,0 +1,241 @@
+$jinu_attack,레식: 단발 사격,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),gun
+$jinu_defend,레식: 전경 방패,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
+jinu_maestro,레식: 꿀잼 마에스트로,2,AT,(1.8 공격력)의 피해를 줍니다. 적에게 {감지}를 3 부여합니다.,E(A>A*1.8)/E(M>detect*3),gun
+jinu_sight,레식: 까불지마,0,UT,적에게 {감지}를 3 부여합니다.,E(M>detect*3),@
+#jinu_mirror,레식: 검은 거울,2,CT,사용 시 어빌리티 북에 <레식: 거울 사출>을 넣습니다. 내 턴이 끝날 때 적에게 {감지}를 1 부여합니다.,S(K>~jinu_mirrorattack*1)[E]E(M>detect*1),@
+~jinu_mirrorattack,레식: 거울 사출,0,AT,[일회성] [보존성] 지속하는 <레식: 검은 거울>을 파괴하는 것으로 (1.0 공격력)의 피해를 주고 어빌리티를 드로우합니다.,[O][K]R(C>$|#jinu_mirror)/N($)/E(A>A)/S(D>1),thrust
+jinu_shieldpack,레식: 피자 보급,1,UT,(1.0 방어력)의 방어를 얻습니다. 적에게 {감지}가 3 이상 부여되어있다면 추가로 {방어력}이 30% 증가합니다.,S(B>B*1.2)/X(_detect)/I(X>2)/S(M>defense*Bx0.3),@
+jinu_autoturret,러스트 수성: 자동 포탑,2,CT,내 턴이 끝날 때 적에게 (1.0 공격력)의 피해를 줍니다.,[E]E(A>A),gun
+#jinu_fixtool,러스트 수성: 도면과 망치,3,CT,[일회성] [소환물] 공격력: 0 / 체력: (최대 체력의 50%) / 데미지 흡수율: 100%의 수성용 바리케이드를 설치합니다.,[O][M]{0|H*0.5|1},@
+#jinu_rocket,러스트 공성: 로켓 런처,2,AT,(1.0 공격력)의 피해를 줍니다. 적이 가진 방어가 피해량에 합산됩니다.,E(A>A+f),explosion
+jinu_electrosaw,러스트 공성: 전기톱,1,AT,(0.7 공격력)의 피해를 줍니다. 적이 방어를 가지고 있지 않은 경우 추가로 {출혈}을 (0.2 공격력) 만큼 부여합니다.,E(A>A*0.7)/I(f=0)/E(M>bleed*Ax0.2),thrust
+jinu_cube,메이플: 수상한 큐브,1,UT,[일회성] [보존성] 잠재 능력을 설정합니다 - 해당 능력은 상태이상으로 확인할 수 있습니다. 페이지에 <메이플: 수상한 큐브>를 추가합니다.,[O][K]S(P>jinu_cube*1)/!,@
+#jinu_coin,메이플: 판타즈마 코인,1,UT,[일회성] [휘발성] (0.7 방어력)의 방어를 얻고 {판타즈마 코인}을 1 얻습니다. 어빌리티 북에 <메이플: 판타즈마 코인>을 추가합니다. ,[V][O]S(B>B*0.7)/S(M>phantasma_coin*1)/S(K>#jinu_coin*1),@
+~jinu_arcaneshade,메이플: 아케인셰이드,3,UT,[일회성] 최대 체력의 50%만큼 방어를 얻습니다. {공격력}과 {방어력}이 2배가 됩니다.,[O]S(B>H*0.5)/S(M>attack*A)/S(M>defense*B),@
+jinu_terraburning,메이플: 테라 버닝,1,UT,다음 턴에 에너지를 2 얻습니다.,S(M>more_energy*2),@
+jinu_asurastorm,메이플: 듀블 아수라 스톰,0,AT,남아있는 에너지의 양 X (1.1 공격력)의 피해를 줍니다. 에너지를 전부 소진합니다.,E(A>A*1.1*E)/S(E>-E),slash
+jinu_clearing,뿌테: 빠른 클리어링,1,AT,[일회성] (0.8 공격력)의 피해를 줍니다. {테트리스 콤보}를 1 얻습니다. 페이지에 <뿌테: 빠른 클리어링>을 추가합니다.,[O]E(A>A*0.8)/S(M>tetris_combo*1)/S(P>jinu_clearing*1),hit
+jinu_perfectclear,뿌테: 퍼펙트 클리어,0,UT,자신에게 부여되어 있는 {테트리스 콤보}의 수만큼 에너지를 회복합니다.,X(tetris_combo)/S(E>X),@
+jinu_tspin,뿌테: T스핀,1,AT,[보존성] (0.5 공격력)의 피해를 줍니다. {테트리스 콤보}가 2 이상 쌓였다면 추가로 에너지를 2 회복합니다.,[K]E(A>A*0.5)/X(tetris_combo)/I(X>1)/S(E>2),hit
+#jinu_payoen,뿌테: 빠요엔,0,AT,[휘발성] {테트리스 콤보}가 7 이상 쌓였다면 (4.0 공격력)의 피해를 줍니다.,[V]X(tetris_combo)/I(X>6)/E(A>A*4),hitFire
+jinu_nuguri,만 오천원의 너구리,1,UT,[일회성] 페이지에서 어빌리티를 하나 선택해 복사합니다.,[O]M(P>$)/S(P>$*1),@
+jinu_billionaire,섯다: 100억의 남자,1,UT,[일회성] [휘발성] 어빌리티를 3개 드로우합니다.,[O][V]S(D>3),@
+#jinu_mask,지누의 가면,0,UT,[일회성] [보존성] 다음에 받는 피해량이 0이 됩니다.,[O][K]S(M>mask*1),@
+#jinu_pixelnetwork,픽셀 네트워크,0,UT,[서장] [일회성] 적의 어빌리티 북에서 무작위 어빌리티를 복사해 페이지로 가져옵니다. 에너지를 1 회복합니다.,[I][O]R(k>$)/S(P>$*1)/S(E>1),@
+$collet_gacha,단챠,1,UT,<흰봉 타격> / <금봉 타격> / <무지개봉 타격> 중 하나를 무작위로 페이지에 추가합니다.,S(P>^bong*1),@
+$collet_defend,정치는 최선의 방어,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
+~collet_whitebong,흰봉 타격,0,AT,[휘발성] [일회성] (0.7 공격력)의 피해를 줍니다. {종합력}을 올릴 수 있는 무작위 타입을 얻습니다.,[V][O]E(A>A*0.7)/S(M>^bangtype*1),hit
+~collet_goldbong,금봉 타격,0,AT,[휘발성] [일회성] (0.9 공격력)의 피해를 줍니다. {종합력}을 올릴 수 있는 무작위 타입을 얻습니다.,[V][O]E(A>A*0.9)/S(M>^bangtype*1),hit
+~collet_rainbong,무지개봉 타격,0,AT,[휘발성] [일회성] (1.1 공격력)의 피해를 줍니다. {종합력}을 올릴 수 있는 무작위 타입을 얻습니다.,[V][O]E(A>A*1.1)/S(M>^bangtype*1),hit
+collet_ticket,작은 티켓,0,UT,[일회성] <흰봉 타격> / <금봉 타격> / <무지개봉 타격> 중 하나를 무작위로 페이지에 추가합니다.,[O]S(P>^bong*1),@
+#collet_dreamfes,드림 페스티벌,1,UT,[보존성] (0.7 방어력)의 방어를 얻습니다. 페이지에 있는 <흰봉 타격>과 <금봉 타격>이 전부 <무지개봉 타격>으로 변화합니다.,[K]S(B>B*0.7)/R(P>@|^bong)/Z(@>~collet_rainbong),@
+#collet_livestage,라이브 스테이지,3,CT,<무지개봉 타격>을 사용할 때마다 어빌리티를 드로우하고 {공격력}이 10% 증가합니다.,[U|~collet_rainbong]S(D>1)/S(M>attack*Ax0.1),@
+collet_copy,티켓 복제,2,UT,[보존성] 페이지에서 <흰봉 타격> / <금봉 타격> / <무지개봉 타격> 중 하나를 선택하여 2회 복제합니다.,[K]M(P>$|^bong)/S(P>$*2),@
+#collet_bigcopy,티켓 대량 복제,1,UT,[휘발성] 페이지에 있는 <흰봉 타격> / <금봉 타격> / <무지개봉 타격>을 전부 복제합니다.,[V]R(P>@|^bong)/S(P>@),@
+collet_triplegacha,3연챠,2,UT,<흰봉 타격> / <금봉 타격> / <무지개봉 타격> 중 무작위로 3개를 페이지에 추가합니다.,S(P>^bong*1)/S(P>^bong*1)/S(P>^bong*1),@
+collet_exchange,티켓 교환,0,UT,페이지에서 <흰봉 타격> / <금봉 타격> / <무지개봉 타격> 중 하나를 선택하여 소멸시키는 것으로 에너지를 1 회복합니다.,M(P>$|^bong)/Q($)/S(E>1),@
+collet_liveboost,라이브 부스트,1,UT,페이지에서 <흰봉 타격> / <금봉 타격> / <무지개봉 타격> 중 하나를 선택하여 소멸시키는 것으로 어빌리티를 3개 드로우합니다.,M(P>$|^bong)/Q($)/S(D>3),@
+collet_premiumbox,프리미엄 해피 BOX,2,CT,내 턴이 시작할 때 <작은 티켓>을 페이지에 추가합니다.,[S]S(P>collet_ticket*1),@
+collet_typeup,동일 타입 편성,0,UT,[보존성] 파워풀 / 쿨 / 해피 / 퓨어 타입 중에서 가장 중첩 수치가 높은 타입의 중첩을 1회 증가시킵니다.,[K]!,@
+collet_areaitem,에어리어 아이템,1,CT,내 턴이 끝날 때 {종합력}을 5 얻습니다.,[E]S(M>bangscore*5),@
+collet_penthrow,뗑컨 투척,1,UT,적의 어빌리티 북에 <뗑컨>을 2개 넣습니다.,E(K>~penguin*2),@
+~penguin,뗑컨,-1,IT,[휘발성] 사용 불가.,[V],@
+collet_penmission,뗑컨 잠입 미션,2,CT,내 턴이 끝날 때 적의 어빌리티 북에 <뗑컨>을 넣습니다.,[E]E(K>~penguin*1),@
+collet_pencharge,뗑컨 돌격!,1,UT,이번 턴에 어빌리티를 사용할 때마다 적의 어빌리티 북에 <뗑컨>을 넣습니다.,S(M>pen_charge*1),@
+#collet_pencopy,뗑컨 복제,2,UT,[일회성] 적의 어빌리티 북에 있는 <뗑컨> 수를 2배로 만듭니다.,[O]X(k>~penguin)/E(K>~penguin*X),@
+collet_pengroup,뗑컨 받아라!,0,UT,[서장] [일회성] 적의 어빌리티 북에 <뗑컨>을 3개 넣습니다.,[I][O]E(K>~penguin*3),@
+#collet_penacid,맹독성 뗑컨,1,UT,[보존성] 적의 어빌리티 북에 있는 <뗑컨> 수의 8배만큼 적에게 {중독}을 부여합니다.,X(k>~penguin)/E(M>poison*Xx8),@
+collet_battleground,배그zl존 코렛트,1,UT,[일회성] <구급 상자> 2개를 페이지에 추가하고 <뒤집힌 자동차>를 어빌리티 북에 넣습니다.,[O]S(P>~collet_firstaid*2)/S(K>~collet_brokencar*1),@
+~collet_firstaid,구급 상자,0,UT,[일회성] [보존성] 최대 체력의 10%를 회복하고 어빌리티를 드로우합니다.,[O][K]S(H>H*0.1)/S(D>1),@
+~collet_brokencar,뒤집힌 자동차,-1,IT,사용 불가.,,@
+#collet_dodge,코또튀,0,UT,다음 번 받는 피해를 회피합니다.,S(M>dodge*1),@
+#collet_shastagram,샤스타그램,1,UT,[일회성] [보존성] 페이지에서 일회성 어빌리티를 하나 선택해 복제합니다.,[O][K]M(P>$|O)/S(P>$*1),@
+$luneray_attack,룬레이 공격,1,AT,(1.0 공격력)의 피해를 줍니다. {매운 맛}을 1 얻습니다.,E(A>A)/S(M>spice*1),hit
+$luneray_defend,룬레이 방어,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
+luneray_spicehit,매운맛 강타,2,AT,(2.0 공격력)의 피해를 줍니다. {매운 맛}을 2 얻습니다.,E(A>A*2)/S(M>spice*2),hitFire
+luneray_buildup,19금 빌드업,0,UT,{매운 맛}을 1 얻습니다. 만약 {매운 맛}이 2 이상이라면 어빌리티를 드로우합니다.,S(M>spice*1)/X(spice)/I(X>1)/S(D>1),@
+#luneray_unstop,멈추지 않는 소방차,0,UT,{매운 맛}을 1 얻습니다. 만약 {매운 맛}이 4 이상이라면 에너지를 1 회복합니다.,S(M>spice*1)/X(spice)/I(X>3)/S(E>1),@
+luneray_sadist,때리는 맛이 최고야,2,AT,(1.5 공격력)의 피해를 줍니다. 만약 {매운 맛}이 2 이상이라면 에너지를 1 회복합니다.,E(A>A*1.5)/X(spice)/I(X>1)/S(E>1),hitFire
+luneray_nobreak,이젠 멈출 수 없어,1,CT,공격성 어빌리티를 사용할 때마다 {매운 맛}을 1 얻습니다.,[U|AT]S(M>spice*1),@
+luneray_accelerate,선정성 급발진,1,AT,[보존성] (1.0 공격력)의 피해를 줍니다. 만약 {매운 맛}이 2 이하라면 {매운 맛}을 2 얻습니다.,[K]E(A>A)/X(spice)/I(X<3)/S(M>spice*2),hit
+luneray_overload,선정성 과부하,0,UT,어빌리티를 2개 드로우합니다. 어빌리티 북에 <노란 딱지>를 2개 넣습니다.,S(D>2)/S(K>~yellow_card*2),@
+#luneray_centerhit,급소 가격,1,AT,(0.1 공격력)의 피해를 줍니다. 적의 방어가 피해량에 합산됩니다.,E(A>f+A*0.1),hit
+#luneray_blacklister,유튜브 블랙리스터,2,CT,내 턴이 시작할 때 {공격력}이 10% 증가하고 페이지에 <노란 딱지>를 추가합니다.,[S]S(M>attack*Ax0.1)/S(P>~yellow_card*1),@
+~yellow_card,노란 딱지,-1,IT,사용 불가.,,@
+luneray_burn,정념: 격화,0,UT,[보존성] 페이지에서 <노란 딱지> 하나를 소멸시키는 것으로 어빌리티를 2개 드로우합니다.,[K]R(P>$|~yellow_card)/Q($)/S(D>2),@
+luneray_confusion,정념: 환락,0,UT,[보존성] 페이지에서 <노란 딱지> 하나를 소멸시키는 것으로 적에게 {혼미}를 부여합니다. 하나 더 소멸시키는 것으로 {에너지 손실}을 1 부여합니다.,[K]R(P>$|~yellow_card)/Q($)/E(M>confusion*1)/R(P>$|~yellow_card)/Q($)/E(M>less_energy*1),@
+luneray_chastity,정념: 정조,0,UT,[보존성] 페이지에서 <노란 딱지>를 전부 소멸시키고 그 개수 X (1.5 방어력)의 방어를 얻습니다.,[K]R(P>@|~yellow_card)/X(@)/Q(@)/S(B>B*X*1.5),@
+#luneray_madness,정념: 광란,0,UT,페이지에서 <노란 딱지> 하나를 소멸시키는 것으로 에너지를 1 회복합니다.,R(P>$|~yellow_card)/Q($)/S(E>1),@
+#luneray_unlimit,한계 돌파,1,UT,[일회성] [보존성] 페이지에서 <노란 딱지> 하나를 소멸시키는 것으로 {공격력}이 50% 증가합니다.,[O][K]R(P>$|~yellow_card)/Q($)/S(M>attack*Ax0.5),@
+luneray_boohit,부힛부힛,1,AT,페이지에서 <노란 딱지>를 전부 소멸시키고 그 개수 X (1.0 공격력)의 피해를 줍니다.,R(P>@|~yellow_card)/X(@)/Q(@)/E(A>A*X),hitFire
+luneray_curse,노란딱지의 저주,2,AT,(1.0 공격력)의 피해를 줍니다. 적의 어빌리티 북에 있는 무작위 어빌리티가 <노란 딱지>로 변화합니다.,E(A>A)/R(k>$)/Z($>~yellow_card),hitFire
+luneray_spicetalk,저세상 매운 맛,1,UT,적의 어빌리티 북에 있는 무작위 어빌리티를 <노란 딱지>로 변화시킵니다.,R(k>$)/Z($>~yellow_card),@
+#luneray_together,매운맛 합방,3,CT,내 턴이 끝날 때 내 어빌리티 북에 <노란 딱지>를 넣고 적의 어빌리티 북에 있는 무작위 어빌리티를 <노란 딱지>로 변화시킵니다.,[E]S(K>~yellow_card*1)/R(k>$)/Z($>~yellow_card),@
+luneray_legacy,밤꽃단의 유산,1,UT,어빌리티 북에서 방해 어빌리티를 최대 3개까지 드로우합니다.,S(DIT>3),@
+#luneray_poiste,포이스테의 환술,1,UT,[일회성] [보존성] 페이지에서 어빌리티 하나를 선택해 복사하여 어빌리티 북에 넣습니다.,[O][K]M(P>$)/S(K>$*1),@
+$aduck_bear,곰구리,3,CT,[서장] [소환물] 공격력: (0.7 공격력) / 체력: (최대 체력의 50%) / 데미지 흡수율: 30%인 곰구리를 소환합니다.,[I][M]{A*0.7|H*0.5|0.3},claw
+$aduck_attack,공격 태세,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),hit
+$aduck_defend,방어 태세,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
+aduck_punch,협공: 곰구리 펀치,1,AT,(0.5 공격력)의 피해를 줍니다. <곰구리>가 소환되어있는 경우 추가로 (0.8 공격력)의 피해를 줍니다.,E(A>A*0.5)/C($aduck_bear)/E(A>A*0.8),hit
+aduck_claw,협공: 강하게 할퀴기,2,AT,(1.6 공격력)의 피해를 줍니다. <곰구리>가 소환되어있는 경우 추가로 {출혈}을 (0.3 공격력)만큼 부여합니다.,E(A>A*1.6)/C($aduck_bear)/E(M>bleed*Ax0.3),claw
+aduck_trample,협공: 깔아뭉개기,2,AT,(1.0 공격력)의 피해를 줍니다. <곰구리>가 소환되어있는 경우 추가로 (1.2 공격력)의 피해를 주고 {드로우 감소}를 1 부여합니다.,E(A>A)/C($aduck_bear)/E(A>A*1.2)/E(M>less_draw*1),earth
+aduck_growl,협공: 으르렁거리기,1,AT,(0.4 공격력)의 피해를 줍니다. <곰구리>가 소환되어있는 경우 추가로 {혼미}를 부여합니다.,E(A>A*0.4)/C($aduck_bear)/E(M>confusion*1),roar
+#aduck_roar,협공: 맹수의 포효,3,AT,[일회성] (2.0 공격력)의 피해를 줍니다. <곰구리>가 소환되어있는 경우 추가로 적의 {공격력}과 {방어력}이 20% 감소합니다.,[O]E(A>A*2)/C($aduck_bear)/E(M>attack*-ax0.2)/E(M>defense*-bx0.2),roar
+aduck_crouch,협동: 웅크리기,1,UT,(0.7 방어력)의 방어를 얻습니다. <곰구리>가 소환되어있는 경우 같은 수치의 방어를 한번 더 얻습니다.,S(B>B*0.7)/C($aduck_bear)/S(B>B*0.7),@
+aduck_sprint,협동: 무시무시한 추격,1,UT,[보존성] 어빌리티를 드로우합니다. <곰구리>가 소환되어있는 경우 한번 더 드로우합니다.,[K]S(D>1)/C($aduck_bear)/S(D>1),@
+#aduck_hightension,협동: 하이 텐션,0,UT,<곰구리>가 소환되어있는 경우 에너지를 1 회복합니다.,C($aduck_bear)/S(E>1),@
+aduck_heatup,곰구리 강해진다!,1,UT,어빌리티를 드로우합니다. 소환되어있는 내 <곰구리>의 공격력을 (0.4 공격력)만큼 더합니다.,S(D>1)/R(C>$|$aduck_bear)/$(A>A*0.4),@
+aduck_recover,곰구리 음식 먹는다!,1,UT,[휘발성] 어빌리티를 드로우합니다. 소환되어있는 내 <곰구리>의 체력을 (최대 체력의 7%)만큼 회복시킵니다.,[V]S(D>1)/R(C>$|$aduck_bear)/$(L>H*0.07),@
+#aduck_guard,곰구리 주인 지킨다!,3,UT,[일회성] 소환되어있는 내 <곰구리>의 체력이 (최대 체력의 100%)만큼 회복되고 데미지 흡수율이 80%로 설정됩니다.,[O]R(C>$|$aduck_bear)/$(L>H)/R(C>$|$aduck_bear)/$(R>0.8),@
+aduck_weaponpaw,곰구리의 발바닥,1,CT,내 턴이 끝날 때 소환되어있는 내 <곰구리>의 공격력을 (0.3 공격력)만큼 더합니다.,[E]R(C>$|$aduck_bear)/$(A>A*0.3),@
+aduck_snack,곰구리의 간식,1,CT,내 턴이 끝날 때 소환되어있는 내 <곰구리>의 체력을 (최대 체력의 5%)만큼 회복시킵니다.,[E]R(C>$|$aduck_bear)/$(L>H*0.05),@
+#aduck_weaponclaw,곰구리의 발톱,2,CT,내 턴이 끝날 때 <곰구리>가 소환되어있는 경우 적에게 {출혈}을 (0.2 공격력)만큼 부여합니다.,[E]C($aduck_bear)/E(M>bleed*Ax0.2),@
+#aduck_firstaid,곰구리를 위한 응급처치,1,UT,[일회성] [보존성] 소환되어있는 내 <곰구리>의 체력이 (최대 체력의 100%)만큼 회복됩니다.,[O][K]R(C>$|$aduck_bear)/$(L>H),@
+aduck_return,곰구리 돌아와!,0,UT,[일회성] [보존성] 스토리지의 어빌리티를 전부 어빌리티 북으로 되돌립니다. 그 후 어빌리티 북에서 <곰구리>를 드로우합니다.,[O][K]R(N>@)/T(@>NK)/S(K>$|$aduck_bear)/S(DSL>1),@
+aduck_exchange,YO! 밍나 곰방와!,0,UT,지속하는 내 어빌리티 하나를 선택해 파괴하고 어빌리티를 2개 드로우합니다.,M(C>$)/N($)/S(D>2),@
+aduck_figure,신상 피규어,2,CT,내 턴이 끝날 때 {공격력}과 {방어력}이 7% 증가합니다.,[E]S(M>attack*Ax0.07)/S(M>defense*Bx0.07),@
+#aduck_rezero,RE: ZERO,2,UT,[일회성] 양쪽 플레이어의 체력이 전부 회복됩니다.,[O]S(H>H)/E(H>h),@
+#aduck_introduction,치유물 애니 소개,3,CT,내 턴이 끝날 때 적의 어빌리티 북에 <치명적인 유해물>을 넣습니다.,[E]E(K>~gore_animation*1),@
+~gore_animation,치명적인 유해물,1,IT,[일회성] {혼미}를 얻습니다.,[O]S(M>confusion*1),@
+$ganggi_attack,강지 펀치,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),hit
+$ganggi_defend,강지 가드,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
+ganggi_karisattack,카리스마 필드: 일격,1,CT,내 턴이 끝날 때 적에게 (0.6 공격력)의 피해를 줍니다. 에너지가 남아있다면 추가로 (0.4 공격력)의 피해를 줍니다.,[E]E(A>A*0.6)/I(E>0)/E(A>A*0.4),hit
+ganggi_karisbarrier,카리스마 필드: 장막,1,CT,내 턴이 끝날 때 (0.7 방어력)의 방어를 얻습니다. 에너지가 남아있다면 추가로 (0.5 방어력)의 방어를 얻습니다.,[E]S(B>B*0.7)/I(E>0)/S(B>B*0.5),@
+ganggi_karisagility,카리스마 필드: 신속,1,CT,내 턴이 시작할 때 어빌리티를 드로우합니다.,[S]S(D>1),@
+#ganggi_karisstrength,카리스마 필드: 증강,2,CT,내 턴이 시작할 때 에너지를 1 얻습니다.,[S]S(E>1),@
+#ganggi_karisvital,카리스마 필드: 활력,2,CT,내 턴이 끝날 때 최대 체력의 5%를 회복합니다. 에너지가 남아있다면 추가로 5%를 회복합니다.,[E]S(H>H*0.05)/I(E>0)/S(H>H*0.05),@
+#ganggi_karisseq,카리스마 필드: 맹공,2,CT,어빌리티를 사용할 때마다 적에게 (0.4 공격력)의 피해를 줍니다.,[U]E(A>A*0.4),hit
+ganggi_loachsoup,추어탕~!,0,UT,[보존성] 내 지속성 어빌리티를 하나 선택해 파괴하는 것으로 {공격력}이 25% 증가합니다.,[K]M(C>$)/N($)/S(attack>Ax0.25),@
+ganggi_happyday,행복한 강지렁이,0,UT,[보존성] 내 지속성 어빌리티를 하나 선택해 파괴하고 어빌리티를 2개 드로우합니다.,[K]M(C>$)/N($)/S(D>2),@
+ganggi_exchange,무서운 사람 아니예요,0,UT,내 지속성 어빌리티를 하나 선택해 파괴하고 에너지를 2 회복합니다.,M(C>$)/N($)/S(E>2),@
+#ganggi_legacy,강도단의 유산,1,UT,에너지가 2배가 됩니다.,S(E>E),@
+ganggi_subscribe,구독↘ 눌러줘!↗,1,UT,(0.7 방어력)의 방어를 얻습니다. 어빌리티를 드로우합니다. 만약 에너지가 3 이상 남아있다면 대신 2개 드로우합니다.,S(B>B*0.7)/S(D>1)/I(E>2)/S(D>1),@
+ganggi_like,좋아요도↘ 눌러줘!↗,1,UT,{공격력}이 10% 증가합니다. 만약 에너지가 3 이상 남아있다면 추가로 10% 증가합니다.,S(M>attack*Ax0.1)/I(E>2)/S(M>attack*Ax0.1),@
+ganggi_soccerkick,강렬한 싸커킥,2,AT,(2.0 공격력)의 피해를 줍니다. 에너지가 2 이상 남아있다면 추가로 (1.0 공격력)의 피해를 줍니다.,E(A>A*2)/I(E>1)/E(A>A),hitFire
+ganggi_knife,데바데: 살인마의 단도,2,AT,(1.5 공격력)의 피해를 줍니다. 에너지가 2 이상 남아있다면 추가로 {출혈}을 (0.4 공격력)만큼 부여합니다.,E(A>A*1.5)/I(E>1)/E(M>bleed*Ax0.4),slash
+ganggi_onekill,데바데: 한방퍽,0,AT,남아있는 에너지의 양 X (1.1 공격력)의 피해를 줍니다. 에너지를 전부 소진합니다.,E(A>1.1*A*E)/S(E>-E),hitFire
+ganggi_badword,(심한 욕),1,AT,(0.6 공격력)의 피해를 줍니다. {혼미}를 1 부여합니다.,E(A>A*0.6)/E(M>confusion*1),roar
+#ganggi_threat,위협적인 살의,2,AT,(1.0 공격력)의 피해를 줍니다. 적이 가진 방어가 피해량에 합산됩니다.,E(A>A+f),roar
+ganggi_concert,마시멜로 콘서트 티켓,3,UT,[일회성] 페이지에서 어빌리티 하나를 선택해 2개 복사하여 내 어빌리티 북에 넣습니다.,[O]M(P>$)/S(K>$*2),@
+#ganggi_staff,강동부 집합,1,UT,[일회성] 어빌리티 북에 <고퀄리티 영상>을 넣습니다.,[O]S(K>~highquality_media*1),@
+~highquality_media,고퀄리티 영상,0,UT,에너지를 1 얻습니다.,S(E>1),@
+#ganggi_sentimental,내가 죽으려고 생각한 것은,2,UT,[일회성] [보존성] 다음 4번의 공격에 의해 받는 피해량이 절반이 됩니다.,[O][K]S(M>sentiment*4),@
+$taem_attack,탬탬버린 펀치,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),hit
+$taem_defend,탬탬버린 방어,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
+$taem_littletangerine,작은 밀감이,0,UT,[서장] [보존성] 이번 턴에 공격성 어빌리티를 사용할 때마다 적이 가진 상태이상의 수 X (0.3 공격력)의 추가 피해를 줍니다.,[I][K]S(M>tangerine*1),@
+taem_bomb,밀감 폭탄,1,AT,(0.9 공격력)의 피해를 주고 {중독}을 (0.1 공격력)만큼 부여합니다.,E(A>A*0.9)/E(M>poison*Ax0.1),explosion
+taem_curse,밀감의 저주,1,AT,(0.8 공격력)의 피해를 주고 {밀감의 저주}를 1 부여합니다.,E(A>A*0.8)/E(M>tangerine_curse*1),void
+~annoying_tangerine,방해 밀감이,-1,IT,[휘발성] 사용 불가.,[V],@
+taem_sadism,SS버린,1,AT,(0.8 공격력)의 피해를 주고 {도발}을 2 부여합니다.,E(A>A*0.8)/E(M>taunt*2),hit
+#taem_jmt,JMT,1,UT,(0.8 방어력)의 방어를 얻습니다. 내 어빌리티 북에 <이게 죽네>와 <저게 안 죽네>를 추가합니다.,S(B>B*0.8)/S(K>~taem_whydie*1)/S(K>~taem_whyalive*1),@
+~taem_whydie,이게 죽네,1,AT,[일회성] (0.7 공격력)의 피해를 주고 {답답}을 1 부여합니다.,[O]E(A>A*0.7)/E(M>stuffy*1),void
+~taem_whyalive,저게 안 죽네,1,AT,[일회성] (0.7 공격력)의 피해를 주고 {실명}을 1 부여합니다.,[O]E(A>A*0.7)/E(M>blind*1),void
+taem_whip,홋↗치,1,AT,(0.5 공격력)의 피해를 주고 {출혈}을 (0.3 공격력)만큼 부여합니다.,E(A>A*0.5)/E(M>bleed*Ax0.3),hitFire
+taem_strengthen,탬두화,1,UT,{공격력}이 15% 증가합니다. 만약 적에게 걸린 상태이상의 수가 5개 이상이라면 추가로 10% 증가합니다.,S(M>attack*Ax0.15)/!,@
+taem_happyday,게임 잘 되는 날,0,UT,적에게 걸린 상태이상의 수가 3개 이상이라면 어빌리티를 2개 드로우합니다.,!,@
+#taem_lalala,(~˘▾˘)~♫•*¨*•.¸¸♪,0,UT,적에게 걸린 상태이상의 수가 3개 이상이라면 에너지를 1 회복합니다.,!,@
+taem_blackcow,블랙 말랑 카우,1,UT,[일회성] 어빌리티 북에 <잔고 없음>을 추가합니다. 어빌리티를 3개 드로우합니다.,[O]S(K>~financial_crisis*1)/S(D>3),@
+~financial_crisis,잔고 없음,2,IT,[일회성],[O],@
+#taem_sadatoz,눈물의 에투제,2,UT,[일회성] 어빌리티 북에 <식은 죽>을 추가합니다. {서러움}을 2 얻습니다.,[O]S(K>~cold_stew*1)/S(M>sorrow*2),@
+~cold_stew,식은 죽,1,UT,[일회성] 최대 체력의 10%를 회복합니다. {재생}을 3 얻습니다.,[O]S(H>H*0.1)/S(M>restoration*3),@
+taem_pikachu,소환: 피카츄,2,CT,내 턴이 끝날 때 (0.6 공격력)의 피해를 주고 {감전}을 2 부여합니다.,[E]E(A>A*0.6)/E(M>electric_shock*2),thunder
+taem_kirha,소환: 전격의 키르아,3,CT,[소환물] 공격력: (0.4 공격력) / 체력: (최대 체력의 40%) / 데미지 흡수율: 30%인 키르아를 소환합니다. 내 턴이 끝날 때 적에게 {감전}을 2 부여합니다.,[M]{A*0.4|H*0.4|0.3}[E]E(M>electric_shock*2),thunder
+#taem_yuumi,소환: 유미 교장선생님,2,CT,[소환물] 공격력: (0.3 공격력) / 체력: (최대 체력의 20%) / 데미지 흡수율: 20%인 유미를 소환합니다. 내 턴이 끝날 때 최대 체력의 3%를 회복합니다.,[M]{A*0.3|H*0.2|0.2}[E]S(H>H*0.03),@
+taem_gamsaring,감사링! 감사띠!,1,UT,공격성 어빌리티를 2개까지 드로우합니다.,S(DAT>2),@
+taem_beknown,방밍아웃 당해버린,0,UT,{부끄러움}을 2 얻습니다. 에너지를 1 회복합니다.,S(M>shyness*2)/S(E>1),@
+#taem_proud,탬쭐탬쭐,1,UT,[보존성] 적에게 걸려있는 상태이상 중 중첩이 1인 것을 무작위로 골라 1회 더 부여합니다.,[K]!,@
+taem_randombox,19년과 탬탬버린 이야기,0,UT,[일회성] 탬탬버린 전용 어빌리티 중 하나를 무작위로 페이지에 추가합니다.,[O]S(P>^taem*1),@
+#taem_legacy,탬동부의 유산,1,UT,[일회성] [보존성] 페이지에서 비용이 1 이하인 어빌리티를 선택해 복사합니다.,[O][K]M(P>$|C1-)/S(P>$*1),@
+#taem_chooseme,ㅊㅈㅁㅍㄹㅈ,3,UT,[일회성] {부끄러움}을 99 얻습니다. 페이지에 있는 모든 어빌리티의 비용을 0으로 만듭니다.,[O]S(M>shyness*99)/R(P>@)/V(@>0),@
+$badgirl_attack,악녀 핵주먹,1,AT,최대 체력의 5%를 소비하여 저장합니다. (1.2 공격력)의 피해를 줍니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*1.2),hit
+$badgirl_defend,악녀 가드,1,UT,(0.8 방어력)의 방어를 얻습니다. {저장 체력}이 최대 체력의 10%보다 많다면 추가로 (0.5 방어력)의 방어를 얻습니다.,S(B>B*0.8)/X(stored_health)/I(X>H*0.1)/S(B>B*0.5),@
+badgirl_allofyou,기강 잡기,2,AT,[보존성] (1.5 공격력)의 피해를 줍니다. {저장 체력}을 전부 소모해 그 수치의 120%만큼 체력을 회복합니다.,[K]E(A>A*1.5)/X(stored_health)/S(H>X*1.2)/X(stored_health)/S(M>stored_health*-X),hitFire
+badgirl_overturn,들어엎기,1,AT,(0.9 공격력)의 피해를 줍니다. {저장 체력} 수치의 10%만큼 {공격력}을 얻습니다.,E(A>A*0.7)/X(stored_health)/S(M>attack*Xx0.1),earth
+badgirl_badword,(매우 심한 욕),1,AT,최대 체력의 5%를 소비하여 저장합니다. (0.9 공격력)의 피해를 주고 {혼미}를 1 부여합니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*0.9)/E(M>confusion*1),roar
+badgirl_shouting,강렬한 샤우팅,2,AT,최대 체력의 5%를 소비하여 저장합니다. (1.4 공격력)의 피해를 주고 적의 어빌리티 북에 <청각 손실>을 넣습니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*1.4)/E(K>~being_deaf*1),roar
+~being_deaf,청각 손실,1,IT,[일회성],[O],@
+badgirl_loud,호탕한 성격,1,CT,내 턴이 끝날 때 최대 체력의 10%를 소비하여 저장하고 {저장 체력} 수치의 40%만큼 방어를 얻습니다.,[E]S(M>stored_health*Hx0.1)/S(H>-H*0.1)/X(stored_health)/S(B>X*0.4),@
+#badgirl_strangetaste,이상한 취향,2,CT,공격성 어빌리티를 사용할 때마다 최대 체력의 3%를 소비하여 저장합니다. 내 턴이 끝날 때 {저장 체력} 수치의 25%만큼 체력을 회복합니다.,[U|AT]S(M>stored_health*Hx0.03)/S(H>-H*0.03)[E]X(stored_health)/S(H>X*0.25),@
+#badgirl_voiceholic,목소리 후욱후욱,1,UT,[일회성] {저장 체력} 수치만큼 체력을 회복합니다.,[O]X(stored_health)/S(H>X),@
+badgirl_secdrip,파괴적인 19금 드립,1,AT,(1.5 공격력)의 피해를 줍니다. 내 어빌리티 북에 <연령 제한 컨텐츠>를 넣습니다.,E(A>A*1.5)/S(K>~badgirl_adultcontent*1),hitFire
+~badgirl_adultcontent,연령 제한 컨텐츠,1,IT,[일회성] 최대 체력의 5%를 소비하여 저장합니다. {매운 맛}을 3 얻습니다.,[O]S(M>stored_health*Hx0.05)/S(H>-H*0.05)/S(M>spice*3),@
+badgirl_uncontrollable,주체할 수 없는 매운 맛,1,CT,공격성 어빌리티를 사용할 때마다 {매운 맛}을 1 얻습니다.,[U|AT]S(M>spice*1),@
+badgirl_yellowcall,노란 딱지의 부름,1,UT,[일회성] [보존성] 페이지에서 무작위 방해성 어빌리티 하나를 소멸시키는 것으로 {공격력}이 10% 증가합니다. 페이지에 <노란 딱지의 부름>을 추가합니다.,[O][K]R(P>$|IT)/Q($)/S(M>attack*Ax0.1)/S(P>badgirl_yellowcall*1),@
+badgirl_corrupt,타락시키기,0,UT,[보존성] 적이 체력을 전부 회복합니다. 적은 다음 턴에 회복된 만큼 체력을 다시 잃습니다.,[K]!,@
+badgirl_promise,강제된 혼약,0,UT,[보존성] {구속}을 1 얻습니다. 가지고 있는 구속 중첩이 4 이상이라면 에너지를 1 회복합니다.,[K]S(M>bind*1)/X(bind)/I(X>3)/S(E>1),@
+badgirl_oneside,일방적인 우결,0,UT,[보존성] 최대 체력의 10%를 소비하여 저장하고 어빌리티를 드로우합니다. {구속}을 2 얻습니다.,[K]S(M>stored_health*Hx0.1)/S(H>-H*0.1)/S(D>1)/S(M>bind*2),@
+#badgirl_bride,만인의 신부,1,UT,[일회성] {구속}을 1 얻습니다. 어빌리티를 드로우합니다. 페이지에 <만인의 신부>를 추가합니다.,[O]S(M>bind*1)/S(D>1)/S(P>#badgirl_bride*1),@
+#badgirl_slaves,스트리머 노예,2,CT,[소환물] 공격력: 0 / 체력: (최대 체력의 30%) / 데미지 흡수율: 50%의 노예를 앞세웁니다.,[M]{0|H*0.3|0.5},@
+#badgirl_hornsnake,뿔뱀 출격,2,CT,[소환물] 공격력: (최대 체력의 5%) / 체력: (최대 체력의 10%) / 데미지 흡수율: 20%의 뿔뱀을 소환합니다. 내 턴이 끝날 때 {출혈}을 {저장 체력} 수치의 7%만큼 부여합니다.,[M]{H*0.05|H*0.1|0.2}[E]X(stored_health)/E(M>bleed*Xx0.07),claw
+badgirl_snack,주전부리,2,UT,[일회성] {재생}을 10 얻습니다.,[O]S(M>restoration*10),@
+#badgirl_letsfight,맞짱 뜨자!,0,UT,[일회성] 양 플레이어 모두 {도발}을 99 얻습니다. 에너지를 1 회복합니다.,S(M>taunt*99)/E(M>taunt*99)/S(E>1),@
+badgirl_staff,악동부의 병상,1,UT,[일회성] [보존성] 페이지에서 공격성 어빌리티를 선택해 복사합니다.,[O][K]M(P>$|AT)/S(P>$*1),@
+#badgirl_mynameis,내 이름 김고추,1,UT,[휘발성] 어빌리티 북에 <연령 제한 컨텐츠>를 넣습니다. 어빌리티를 3개 드로우합니다.,[V]S(K>~badgirl_adultcontent*1)/S(D>3),@
+$chap_attack,고차비 공격,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),hit
+$chap_defend,고차비 방어,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
+chap_sweetpotato,화난 찹쌀이: 고구마맛,1,UT,<고구마 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(K>~mochi_sweetpotato*2),@
+chap_pumpkin,뾰루퉁한 찹쌀이: 호박맛,1,UT,<호박 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(K>~mochi_pumpkin*2),@
+chap_banana,신난 찹쌀이: 바나나맛,1,UT,<바나나 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(K>~mochi_banana*2),@
+chap_strawberry,행복한 찹쌀이: 딸기맛,1,UT,<딸기 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(K>~mochi_strawberry*2),@
+chap_greentea,평온한 찹쌀이: 녹차맛,1,UT,<녹차 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(K>~mochi_greentea*2),@
+#chap_kiwi,슬픈 찹쌀이: 키위맛,1,UT,<키위 찹쌀이> 토큰을 내 어빌리티 북에 넣습니다.,S(K>~mochi_kiwi*1),@
+~mochi_sweetpotato,고구마 찹쌀이,0,AT,[일회성] [휘발성] (0.2 공격력)의 피해를 줍니다. {찹쌀이}를 2 부여합니다. 어빌리티를 드로우합니다.,[V][O]E(A>A*0.2)/E(M>chap*2)/S(D>1),hit
+~mochi_pumpkin,호박 찹쌀이,0,AT,[일회성] [휘발성] (0.4 공격력)의 피해를 줍니다. {찹쌀이}를 1 부여합니다. 공격성 어빌리티를 드로우합니다.,[V][O]E(A>A*0.4)/E(M>chap*1)/S(D>1),hit
+~mochi_banana,바나나 찹쌀이,0,UT,[일회성] [휘발성] (0.5 방어력)의 방어를 얻습니다. 적에게 {찹쌀이}를 1 부여합니다. 어빌리티를 드로우합니다.,[V][O]S(B>B*0.5)/E(M>chap*1)/S(D>1),@
+~mochi_strawberry,딸기 찹쌀이,0,UT,[일회성] [휘발성] (0.5 공격력)의 피해를 줍니다. {찹쌀이}를 2 부여합니다.,[V][O]E(A>A*0.5)/E(M>chap*2),@
+~mochi_greentea,녹차 찹쌀이,0,UT,[일회성] [휘발성] 페이지에 있는 어빌리티 수만큼 적에게 {찹쌀이}를 부여합니다. 어빌리티를 드로우합니다.,[V][O]X(P>@)/E(M>chap*X)/S(D>1),@
+~mochi_kiwi,키위 찹쌀이,0,AT,[일회성] [휘발성] (1.0 공격력)의 피해를 줍니다. 적에게 부여된 {찹쌀이} 중첩을 2배로 만듭니다. 어빌리티를 드로우합니다.,[V][O]E(A>A)/X(_chap)/E(M>chap*X)/S(D>1),hit
+chap_hoguma,호구마!,3,UT,[보존성] 페이지에 있는 찹쌀이 토큰을 전부 복사합니다.,[K]R(P>@|^mochi)/S(P>@),@
+chap_throw,찹쌀이 투척,2,AT,(1.5 공격력)의 피해를 줍니다. 무작위 찹쌀이 토큰을 어빌리티 북에 3개 넣습니다.,E(A>A*1.5)/S(K>^mochi*1)/S(K>^mochi*1)/S(K>^mochi*1),hit
+chap_revolt,찹쌀이들의 반란,2,CT,찹쌀이 토큰을 사용할 때마다 적에게 {중독}을 (0.05 공격력)만큼 부여합니다.,[U|^mochi]E(M>poison*Ax0.05),@
+chap_crown,찹쌀이를 위한 왕관,1,UT,(0.5 방어력)의 방어를 얻습니다. 페이지에 있는 찹쌀이 토큰이 전부 <왕관 찹쌀이>로 변합니다.,S(B>B*0.5)/R(P>@|^mochi)/Z(@>~mochi_crown),@
+~mochi_crown,왕관 찹쌀이,0,AT,[일회성] [휘발성] (0.3 공격력)의 피해를 줍니다. (0.3 방어력)의 방어를 얻습니다. 적에게 {찹쌀이}를 2 부여합니다. 어빌리티를 드로우합니다.,[V][O]E(A>A*0.3)/S(B>B*0.3)/E(M>chap*2)/S(D>1),hit
+chap_reddiamond,붉은 다이아 문양,2,CT,[카운트] 내가 어빌리티를 사용할 때마다 카운트를 1 얹습니다. 카운트가 8이 되면 (1.0 공격력)의 피해를 주고 (1.0 방어력)의 방어를 얻은 후 카운트를 0으로 초기화합니다.,[W]{0}[U]W(1)/I(W>7)/E(A>A)/S(B>B)/W(R),hit
+chap_intelligence,공대여신의 지성,2,CT,[카운트] 내가 어빌리티를 사용할 때마다 카운트를 1 얹습니다. 카운트가 12가 되면 에너지를 1 회복하고 카운트를 0으로 초기화합니다.,[W]{0}[U]W(1)/I(W>11)/S(E>1)/W(R),@
+chap_yesss,눼에에...,1,UT,(1.0 방어력)의 방어를 얻습니다. 내 어빌리티 북에 들어있는 어빌리티의 개수가 10개 이상이면 어빌리티를 드로우합니다.,S(B>B)/X(K>@)/I(X>9)/S(D>1),@
+chap_chabc,Ch.ABC,0,UT,내 어빌리티 북에 들어있는 어빌리티의 개수가 10개 이상이면 에너지를 1 회복합니다.,X(K>@)/I(X>9)/S(E>1),@
+chap_refactoring,게임 제작: 리팩토링,2,UT,[일회성] [보존성] 내 어빌리티 북에 들어있는 방해성 어빌리티를 전부 소멸시키고 그 개수만큼 {재생}을 얻습니다.,[O][K]R(K>@|IT)/X(@)/Q(@)/S(M>restoration*X),@
+chap_datacontrol,게임 제작: 자료 제어,1,UT,[일회성] [보존성] 페이지에 있는 어빌리티를 선택하여 해당 어빌리티에 [일회성] 능력을 부여하고 비용을 0으로 만듭니다.,[O][K]M(P>$)/V($>O)/V($>0),@
+#chap_luckychab,최강 운차비,1,UT,[일회성] 다음 턴에 받는 모든 피해를 30% 확률로 회피합니다.,[O]S(M>luck*1),@
+chap_cutethumbnail,귀여운 썸네일,0,UT,[일회성] 다음 턴에 에너지를 1 얻습니다.,[O]S(M>more_energy*1),@
+chap_webtoon,찹툰 -동결 상태-,1,UT,공격성 어빌리티를 2개까지 드로우합니다.,S(DAT>2),@
+#chap_kuma,쿠마냥이,1,UT,[일회성] [보존성] 페이지에서 일회성 어빌리티를 하나 선택해 복제합니다.,[O][K]M(P>$|O)/S(P>$*1),@
+ai_deal,트수의 공격,1,AT,N,(1.0 공격력)의 피해를 줍니다.,E(A>A*1),hit
+ai_silent,트수의 방어,1,UT,N,(1.0 방어력)의 방어를 얻습니다.,S(B>B*1),@
+ai_fiercer,과격화,0,UT,F,{공격력}이 15% 증가합니다.,S(M>attack*Ax0.15),@
+ai_madness,광폭화,1,UT,F,[일회성] {공격력}이 30% 증가합니다.,[O]S(M>attack*Ax0.3),@
+ai_bigdeal,극딜,1,AT,P,(0.8 공격력)의 피해를 줍니다. 어빌리티를 2개 드로우합니다.,E(A>A*0.8)/S(D>2),hitFire
+ai_strengthening,과격해지는 채팅,2,CT,C,내 턴이 끝날 때 {공격력}이 10% 증가합니다.,[E]S(M>attack*Ax0.1),@
+ai_macrochat,채팅 매크로,1,CT,C,내 턴이 끝날 때 (0.5 공격력)의 피해를 줍니다.,[E]E(A>A*0.5),@
+ai_quit,다른 방으로 도망,1,UT,P,(0.8 방어력)의 방어를 얻습니다. 어빌리티를 2개 드로우합니다.,S(B>B*0.8)/S(D>2),@
+ai_nochat,무채팅 시청,0,UT,F,(0.4 방어력)의 방어를 얻습니다. {방어력}이 10% 증가합니다.,S(B>B*0.4)/S(M>defense*Bx0.1),@
+ai_crouch,웅크리기,1,UT,F,[일회성] (0.5 방어력)의 방어를 얻습니다. {방어력}이 40% 증가합니다.,[O]S(B>B*0.5)/S(M>defense*60),@
+ai_dodge,충성충성 ^^7,1,UT,E,(0.3 방어력)의 방어를 얻습니다. {방어 보존}을 1 얻습니다.,S(B>B*0.3)/S(M>conserve_def*1),@
+ai_incsense,향상되는 눈치,2,CT,C,내 턴이 끝날 때 {방어력}이 10% 증가합니다.,[E]S(M>defense*Bx0.1),@
+ai_sensing,눈치 100단,1,CT,C,내 턴이 끝날 때 (0.5 방어력)의 방어를 얻습니다.,[E]S(B>B*0.5),@
+ai_guerilla,치고 빠지기,1,AT,E,가지고 있는 방어만큼 피해를 줍니다.,E(A>F),hit
+ai_follow,팔로우,0,UT,P,어빌리티를 드로우합니다.,S(D>1),@
+ai_subscription,구독,1,UT,P,[일회성] 어빌리티를 3개 드로우합니다.,[O]S(D>3),@
+ai_winevent,이벤트 당첨,0,UT,F,에너지를 1 회복합니다.,S(E>1),@
+ai_badcomment,악플 등록,2,AT,N,(1.0 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <악플러>를 넣습니다.,E(A>A)/E(K>~malicious_comment*1),hit
+ai_plastering,의미없는 도배,0,UT,P,적의 어빌리티 북에 <악성 시청자>를 넣습니다. 어빌리티를 드로우합니다.,E(K>~malicious_viewer*1)/S(D>1),@
+ai_mentionothers,타 스트리머 언급,1,AT,N,(0.7 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <악성 시청자>를 넣습니다.,E(A>A*0.7)/E(K>~malicious_viewer*1),hit
+ai_agro,어그로 끌기,1,AT,N,(0.8 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <무개념 시청자>를 넣습니다.,E(A>A*0.8)/E(K>~idiot_viewer*1),hit
+ai_squandering,분탕질,2,UT,F,[서장] [일회성] 적의 어빌리티 북에 <무개념 시청자>와 <악성 시청자>를 각 2개씩 넣습니다.,[O]E(K>~idiot_viewer*2)/E(K>~malicious_viewer*2),@
+ai_maliciousbot,악성 봇,3,CT,C,내 턴이 끝날 때 적의 어빌리티 북에 <무개념 시청자>와 <악성 시청자>를 각 1개씩 넣습니다.,[E]E(K>~idiot_viewer*1)/E(K>~malicious_viewer*1),@
+ai_cashdeal,돈으로 때리기,0,AT,F,적의 방어만큼 피해를 줍니다.,E(A>f),hit
+ai_chatrush,채팅 러쉬,0,UT,F,걸려있는 상태이상을 전부 제거합니다.,!,@
+ai_kookooroo,쿠쿠루쿠쿠,1,UT,F,적의 어빌리티 북에 있는 무작위 어빌리티를 소멸시킵니다.,R(k>$)/Q($),@
+ai_m416,저격 배그: M416 연발 사격,1,AT,N,(0.9 공격력)의 피해를 줍니다. {출혈}을 (0.15 공격력)만큼 부여합니다.,E(A>A*0.9)/E(M>bleed*Ax0.15),gun
+ai_kar98k,저격 배그: Kar98K 저격,2,AT,N,(2.0 공격력)의 피해를 줍니다. {출혈}을 (0.1 공격력)만큼 부여합니다.,E(A>A*2)/E(M>bleed*Ax0.1),gun
+ai_grenade,저격 배그: 감자 망겜,2,AT,N,(1.5 공격력)의 피해를 줍니다. {혼미}를 1 부여합니다.,E(A>A*1.5)/E(M>confusion*1),explosion
+ai_firebottle,저격 배그: 화염병,1,AT,N,(0.2 공격력)의 피해를 줍니다. {화상}을 2 부여합니다.,E(A>A*0.2)/E(M>burn*2),fire
+ai_highhelmet,저격 배그: 3뚝 장비,2,UT,F,(0.8 방어력)의 방어를 얻습니다. {충격 완화}를 3 얻습니다.,S(B>B*0.8)/S(M>shock_mitigation*3),@
+ai_armor,저격 배그: 방탄 조끼,2,UT,N,(1.0 방어력)의 방어를 얻습니다. {방어막}을 5 얻습니다.,S(B>B)/S(M>barrier*5),@
+ai_medicalkit,저격 배그: 의료용 키트,1,UT,N,[일회성] {재생}을 10 얻습니다.,[O]S(M>restoration*10),@
+ai_teemo,저격 롤: 티모충,1,UT,F,내 어빌리티 북에 <저격 롤: 유독성 함정>을 2개 넣습니다.,S(K>~ai_poisontrap*2),@
+~ai_poisontrap,저격 롤: 유독성 함정,0,UT,F,적에게 {중독}을 (0.15 공격력)만큼 부여합니다. 어빌리티를 드로우합니다.,E(M>poison*Ax0.15)/S(D>1),@
+ai_yasuo,저격 롤: '그 과학',1,AT,N,(0.8 공격력)의 피해를 줍니다. 동일한 양의 방어를 얻습니다.,E(A>A*0.8)/S(B>A*0.8),slash
+ai_junglegap,저격 롤: ㅈㄱㅊㅇ,1,UT,F,적에게 {도발}을 5 부여합니다.,E(M>taunt*5),@
+ai_ironplay,저격 롤: 아이언급 플레이,1,UT,F,적에게 {실명}을 1 부여합니다.,E(M>blind*1),@
+ai_orderignore,저격 롤: 오더 무시,1,UT,F,적에게 {답답}을 1 부여합니다.,E(M>stuffy*1),@
