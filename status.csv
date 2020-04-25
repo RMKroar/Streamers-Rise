@@ -1,5 +1,5 @@
-attack,공격력,normal,플레이어의 공격력입니다.,
-defense,방어력,normal,플레이어의 방어력입니다.,
+attack,공격력,normal,캐릭터의 공격력입니다.,
+defense,방어력,normal,캐릭터의 방어력입니다.,
 conserve_def,방어 보존,dec_start,턴의 시작에 방어가 사라지지 않습니다.,[S]!
 less_draw,드로우 감소,del_draw,중첩된 만큼 드로우할 수 없습니다.,!
 more_draw,드로우 증가,del_draw,중첩된 만큼 더 많이 드로우합니다.,!
@@ -8,10 +8,10 @@ reduce_attack,공격력 감소,del_end,턴이 끝날 때 공격력 감소 중첩
 increase_defense,방어력 증가,del_end,턴이 끝날 때 방어력 증가 중첩만큼 {방어력}이 증가합니다.,[E]S(M>defense*W)
 more_energy,추가 에너지,del_start,턴이 시작할 때 추가 에너지 중첩만큼 에너지를 얻습니다.,[S]S(E>W)
 less_energy,에너지 손실,del_start,턴이 시작할 때 에너지 손실 중첩만큼 에너지를 잃습니다.,[S]S(E>-W)
-detect,감지,dec_dam,피해를 감지 중첩 당 10% 더 많이 받습니다.,[B]Y(1+W*0.1)
+detect,감지,dec_dam,받는 피해량이 감지 중첩 당 10% 증가합니다.,[B]Y(1+W*0.1)
 poison,중독,dec_end,턴이 끝날 때 중독 중첩만큼 체력을 잃습니다.,[E]S(H>-W)
 bleed,출혈,dec_end,턴이 끝날 때 출혈 중첩만큼 체력을 잃습니다.,[E]S(H>-W)
-spice,매운 맛,realtime,매운 맛 중첩이 5 이상이 되면 {공격력}이 20% 증가하고 페이지에 <노란 딱지>를 추가합니다. 그 후 모든 중첩을 제거합니다.,I(W>4)/S(M>attack*Ax0.2)/S(P>~yellow_card*1)/N(%)
+spice,매운 맛,realtime,매운 맛 중첩이 5 이상이 되면 {공격력}이 60% 증가하고 페이지에 <노란 딱지>를 추가합니다. 그 후 모든 중첩을 제거합니다.,I(W>4)/S(M>attack*Ax0.6)/S(P>~yellow_card*1)/N(%)
 confusion,혼미,dec_end,어빌리티를 사용할 때마다 최대 체력의 3%를 잃습니다.,[U]S(H>-H*0.03)
 counter,반격,dec_dam,피해를 받을 때마다 적이 최대 체력의 3%를 잃습니다.,[B]E(H>-h*0.03)
 restoration,재생,dec_end,턴이 끝날 때 재생 중첩 당 최대 체력의 1%를 회복합니다.,[E]S(H>H*0.01*W)
@@ -32,9 +32,9 @@ pen_charge,뗑컨 돌격,del_end,어빌리티를 사용할 때마다 적의 어�
 dodge,회피,dec_dam,받는 피해량이 0이 됩니다.,[B]Y(0)
 sentiment,감성,dec_dam,받는 피해량이 절반이 됩니다.,[B]Y(0.5)
 tangerine,밀감,del_end,공격성 어빌리티를 사용할 때마다 적이 가진 상태이상의 수 X (0.3 공격력)의 피해를 줍니다.,[U|AT]!
-tangerine_curse,밀감의 저주,dec_end,유틸성 어빌리티를 사용할 때마다 내 어빌리티 북에 <방해 밀감이>를 넣습니다.,[U|UT]S(K>~annoying_tangerine*1)
+tangerine_curse,밀감의 저주,dec_end,어빌리티를 사용할 때마다 내 어빌리티 북에 <방해 밀감이>를 넣습니다.,[U]S(K>~annoying_tangerine*1)
 taunt,도발,dec_dam,받는 피해량이 30% 증가합니다.,[B]Y(1.3)
-stuffy,답답,dec_end,비용이 1 이하인 어빌리티를 사용할 때마다 에너지를 1 잃습니다.,[U|C1-]S(E>-1)
+stuffy,답답,dec_end,공격성 어빌리티를 사용할 때마다 에너지를 1 잃습니다.,[U|AT]S(E>-1)
 blind,실명,dec_end,어빌리티를 사용할 때마다 페이지의 무작위 어빌리티를 버립니다.,[U]R(P>$)/T($>PN)
 sorrow,서러움,dec_dam,받는 피해량이 80% 감소합니다.,[B]Y(0.2)
 electric_shock,감전,dec_dam,피해를 받을 때마다 감전 중첩 하나 당 최대 체력의 1%를 추가로 잃습니다.,[B]S(H>-H*0.01*W)
@@ -42,8 +42,22 @@ shyness,부끄러움,dec_dam,받는 피해량이 25% 증가합니다.,[B]Y(1.25)
 stored_health,저장 체력,normal,저장된 체력입니다. 다양한 방식으로 운용이 가능합니다.,
 corruption,타락,del_start,내 턴의 시작에 타락 중첩만큼 체력을 잃습니다.,[S]S(H>-W)
 bind,구속,normal,내 턴이 끝날 때 내 체력이 적의 체력보다 적은 경우 구속 중첩이 5 이상이면 적은 체력 차이만큼 체력을 잃습니다.,[E]I(W>5)/!/N(%)
-chap,찹쌀이,del_end,내 턴이 끝날 때 찹쌀이 중첩 X (0.1 적 공격력)만큼 체력을 잃습니다. 중첩이 8 이상이면 {드로우 감소}를 1 얻습니다. 15 이상이면 {에너지 손실}을 1 얻습니다.,[E]S(H>-W*0.1*a)/I(W>7)/S(M>less_draw*1)/I(W>14)/S(M>less_energy*1)
+chap,찹쌀이,del_start,받는 피해량이 중첩 당 10% 증가합니다. 내 턴이 시작할 때 찹쌀이 중첩 X (0.01 최대 체력)만큼 체력을 잃습니다.,[B]Y(1+W*0.1)[S]S(H>-W*0.01*H)
 luck,행운,dec_start,피해를 받을 때마다 30% 확률로 그 피해량을 0으로 만듭니다.,[B]Y(!)
 burn,화상,dec_end,턴이 끝날 때 최대 체력의 5%를 잃습니다.,[E]S(H>-H*0.05)
 shock_mitigation,충격 완화,dec_dam,받는 피해량이 절반이 됩니다.,[B]Y(0.5)
 exhaust,탈진,normal,방송이 너무 오래 지속되어 탈진이 찾아왔습니다. 턴이 끝날 때 탈진 중첩 하나 당 최대 체력의 10%를 잃습니다.,[E]S(H>-H*0.1*W)
+taran,타란~,del_end,어빌리티를 사용할 때마다 (1.0 공격력)의 피해를 줍니다.,[U]E(A>A)
+azikun,아지쿤 게이지,del_end,{트최탱 게이지} 중첩보다 중첩된 수가 같거나 많으면 아지쿤 게이지 중첩 하나 당 공격력의 10%가 증가합니다.,[E]!
+tanker,트최탱 게이지,del_end,{아지쿤 게이지} 중첩보다 중첩된 수가 같거나 많으면 트최탱 게이지 중첩 하나 당 방어력의 10%가 증가합니다.,[E]!
+ult_charge,궁극기 충전,normal,궁극기 충전 중첩이 5 이상인 상태에서 영웅을 변경할 경우 해당 영웅의 궁극기를 추가로 얻습니다.,
+zarya_shield,방벽 전개,del_start,받은 피해량만큼 중첩을 얻습니다. 내 턴이 시작할 때 방벽 전개 중첩만큼 방어를 얻습니다.,[B]![S]S(B>W)
+formation_destroy,진형 붕괴,dec_end,받는 피해량이 진형 붕괴 중첩 당 30% 증가합니다.,[B]Y(1+W*0.3)
+deadeye,황야의 무법자,del_end,내 턴이 끝날 때 황야의 무법자 중첩만큼 피해를 받습니다.,[E]S(A>W)
+healban,힐밴,del_end,회복 효과를 받을 수 없습니다.,!
+nanoboost,나노 강화제,del_start,받는 피해량이 30% 감소합니다.,[B]Y(0.7)
+harmony,조화,dec_end,내 턴이 끝날 때 최대 체력의 5%를 회복합니다.,[E]S(H>H*0.05)
+discord,부조화,dec_end,받는 피해량이 부조화 중첩 당 20% 증가합니다.,[B]Y(1+W*0.2)
+transcend,초월,dec_dam,받는 피해량이 0이 됩니다. 또한 방어를 무시하고 들어오는 피해에도 면역이 됩니다.,[B]Y(0)
+ggamxx,x_x,del_end,공격성 어빌리티를 사용할 때마다 내 어빌리티 북에 <붕어>를 넣습니다.,[U|AT]S(K>~gambler_carp*1)
+metaphor,비유ㅇ신,del_end,유틸성 어빌리티를 사용할 때마다 내 어빌리티 북에 <붕어>를 넣습니다.,[U|UT]S(K>~gambler_carp*1)
