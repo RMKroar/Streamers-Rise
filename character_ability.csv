@@ -278,7 +278,7 @@ gambler_meh,-붕-,1,UT,적의 어빌리티 북에 <붕어>를 2개 넣습니다.
 gambler_ggamxx,(머리 짚는 트수티콘),1,UT,(0.6 방어력)의 방어를 얻습니다. 다음 턴 동안 적은 공격성 어빌리티를 사용할 때마다 어빌리티 북에 <붕어>를 넣습니다. 어빌리티를 드로우합니다.,S(B>B*0.6)/E(M>ggamxx*1)/S(D>1),@
 gambler_metaphor,비유ㅇ신,1,UT,(0.6 방어력)의 방어를 얻습니다. 다음 턴 동안 적은 유틸성 어빌리티를 사용할 때마다 어빌리티 북에 <붕어>를 넣습니다. 어빌리티를 드로우합니다.,S(B>B*0.6)/E(M>metaphor*1)/S(D>1),@
 #gambler_platinum,전프로 (플레),1,UT,{궁극기 충전} 중첩 수만큼 적의 어빌리티 북에 <붕어>를 넣고 중첩을 초기화합니다. 어빌리티를 드로우합니다.,X(ult_charge)/E(K>~gambler_carp*X)/X(ult_charge)/S(M>ult_charge*-X)/S(D>1),@
-gambler_meec,밐?,2,UT,[일회성] 적의 어빌리티 북에 <붕어>를 5개 넣습니다. 어빌리티를 드로우합니다.,[O]E(K>~gambler_carp*5)/S(D>1),@
+gambler_meec,맠?,2,UT,[일회성] 적의 어빌리티 북에 <붕어>를 5개 넣습니다. 어빌리티를 드로우합니다.,[O]E(K>~gambler_carp*5)/S(D>1),@
 #gambler_happycarp,행복한 붕어,2,CT,내 턴이 시작할 때 적의 어빌리티 북에 <붕어>를 넣습니다. 내 턴이 끝날 때 적의 어빌리티 북에 있는 <붕어>의 수만큼 최대 체력의 4%를 회복합니다.,[S]E(K>~gambler_carp*1)[E]X(k>~gambler_carp)/S(H>H*0.04*X),@
 #gambler_lovebattery,♪ 사랑의 배터리,1,UT,[보존성] 내 어빌리티 북에 들어있는 방해성 어빌리티를 전부 소멸시키고 그 개수만큼 {재생}을 얻습니다.,[K]R(K>@|IT)/X(@)/Q(@)/S(M>restoration*X),@
 #gambler_singer,감범준! 감범준!,1,UT,[보존성] 페이지에서 일회성 어빌리티를 선택해 복제합니다.,[K]M(P>$|O)/S(P>$*1),@
