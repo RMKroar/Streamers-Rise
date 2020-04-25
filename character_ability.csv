@@ -226,47 +226,47 @@ azi_height,135 + 35,0,UT,[휘발성] 에너지를 1 회복합니다.,[V]S(E>1),@
 ~gambler_panelty,감블러 패널티,-1,IT,이 캐릭터는 전용 어빌리티의 효과가 매우 강력한 대신 매 턴 시작 시 드로우 개수가 1 감소하고 시작 능력치가 10% 감소합니다.,,@
 $gambler_attack,일반 사격,1,AT,(1.2 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,E(A>A*1.2)/S(M>ult_charge*1),gun
 $gambler_healpack,간이 힐팩,1,UT,(0.6 방어력)의 방어를 얻습니다. 최대 체력의 6%를 회복합니다.,S(B>B*0.6)/S(H>H*0.06),@
-gambler_herozarya,영웅 변경: 자리야,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 자리야의 스킬셋을 얻습니다. (0.8 방어력)의 방어를 얻고 같은 수치만큼 {방벽 전개}를 얻습니다.,!/S(P>~gambler_particlecannon*2)/S(P>~gambler_particlebarrier*1)/S(B>B*0.8)/S(M>zarya_shield*Bx0.8)/X(ult_charge)/I(X>4)/S(P>~gambler_graviton*1)/S(M>ult_charge*-X),@
+gambler_herozarya,영웅 변경: 자리야,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 자리야의 스킬셋을 얻습니다. (0.8 방어력)의 방어를 얻고 같은 수치만큼 {방벽 전개}를 얻습니다.,!/S(P>~gambler_particlecannon*2)/S(P>~gambler_particlebarrier*1)/S(B>B*0.8)/S(M>zarya_shield*Bx0.8)/X(ult_charge)/I(X>4)/S(P>~gambler_graviton*1)/X(ult_charge)/S(M>ult_charge*-X),@
 ~gambler_particlecannon,입자탄,0,AT,[일회성] [보존성] 내가 가지고 있는 방어의 50%만큼 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>F*0.5)/S(M>ult_charge*1),explosion
 ~gambler_particlebarrier,입자 방벽,0,UT,[일회성] [보존성] (1.0 방어력)의 방어를 얻습니다. {궁극기 충전}을 1 얻습니다.,[O][K]S(B>B)/S(M>ult_charge*1),@
 ~gambler_graviton,중력자탄,1,AT,[일회성] [보존성] (1.2 공격력)에 내가 가진 방어를 합한 수치만큼 피해를 줍니다. 적에게 {진형 붕괴}를 2 부여합니다.,[O][K]E(A>A*1.2+F)/E(M>formation_destroy*2),void
-gambler_herowinston,영웅 변경: 윈스턴,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 윈스턴의 스킬셋을 얻습니다. (1.2 방어력)의 방어를 얻습니다.,!/S(P>~gambler_teslacannon*2)/S(P>~gambler_projector*1)/S(B>B*1.2)/X(ult_charge)/I(X>4)/S(P>~gambler_rage*1)/S(M>ult_charge*-X),@
+gambler_herowinston,영웅 변경: 윈스턴,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 윈스턴의 스킬셋을 얻습니다. (1.2 방어력)의 방어를 얻습니다.,!/S(P>~gambler_teslacannon*2)/S(P>~gambler_projector*1)/S(B>B*1.2)/X(ult_charge)/I(X>4)/S(P>~gambler_rage*1)/X(ult_charge)/S(M>ult_charge*-X),@
 ~gambler_teslacannon,테슬라 캐논,0,AT,[일회성] [보존성] (0.5 공격력)의 피해를 주고 {감전}을 2 부여합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.5)/E(M>electric_shock*2)/S(M>ult_charge*1),thunder
 ~gambler_projector,방벽 생성기,0,UT,[일회성] [보존성] (1.0 방어력)의 방어를 얻습니다. {궁극기 충전}을 1 얻습니다.,[O][K]S(B>B)/S(M>ult_charge*1),@
 ~gambler_rage,원시의 분노,1,UT,[일회성] [보존성] 방어가 2배가 됩니다. 어빌리티 페이지에 있는 모든 <테슬라 캐논>이 <분노의 원숭이 주먹>으로 변화합니다.,[O][K]S(B>F)/R(P>@|~gambler_teslacannon)/Z(@>~gambler_monkeypunch),@
 ~gambler_monkeypunch,분노의 원숭이 주먹,0,AT,[일회성] (1.2 공격력)의 피해를 주고 {혼미}를 1 부여합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*1.2)/E(M>confusion*1)/S(M>ult_charge*1),hitFire
-gambler_heroorisa,영웅 변경: 오리사,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 오리사의 스킬셋을 얻습니다. (1.2 방어력)의 방어를 얻습니다.,!/S(P>~gambler_fusiondriver*1)/S(P>~gambler_halt*1)/S(P>~gambler_fortify*1)/S(B>B*1.2)/X(ult_charge)/I(X>4)/S(P>~gambler_supercharger*1)/S(M>ult_charge*-X),@
+gambler_heroorisa,영웅 변경: 오리사,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 오리사의 스킬셋을 얻습니다. (1.2 방어력)의 방어를 얻습니다.,!/S(P>~gambler_fusiondriver*1)/S(P>~gambler_halt*1)/S(P>~gambler_fortify*1)/S(B>B*1.2)/X(ult_charge)/I(X>4)/S(P>~gambler_supercharger*1)/X(ult_charge)/S(M>ult_charge*-X),@
 ~gambler_fusiondriver,융합 기관포,0,AT,[일회성] [보존성] (0.6 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.6)/S(M>ult_charge*1),explosion
 ~gambler_halt,꼼짝 마!,0,UT,[일회성] [보존성] 적에게 {진형 붕괴}를 1 부여합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(M>formation_destroy*1)/S(M>ult_charge*1),@
 ~gambler_fortify,방어 강화,0,UT,[일회성] [보존성] {궁극기 충전}을 제외한 자신에게 걸려있는 상태이상을 전부 해제합니다. 그 후 {충격 완화}를 2 얻고 {궁극기 충전}을 1 얻습니다.,[O][K]!/S(M>shock_mitigation*2)/S(M>ult_charge*1),@
 ~gambler_supercharger,초강력 증폭기,1,CT,[일회성] [보존성] [소환물] 공격력: 0 / 체력: (최대 체력의 30%) / 데미지 흡수율: 100%의 초강력 증폭기를 설치합니다. 내 턴이 끝날 때 {공격력}이 30% 증가합니다.,[O][M]{0|H*0.3|1}[E]S(M>attack*Ax0.3),@
-gambler_heromccree,영웅 변경: 맥크리,2,AT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 맥크리의 스킬셋을 얻습니다. (0.6 공격력)의 피해를 줍니다.,!/S(P>~gambler_peacekeeper*2)/S(P>~gambler_flashbang*1)/E(A>A*0.6)/X(ult_charge)/I(X>4)/S(P>~gambler_deadeye*1)/S(M>ult_charge*-X),gun
+gambler_heromccree,영웅 변경: 맥크리,2,AT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 맥크리의 스킬셋을 얻습니다. (0.6 공격력)의 피해를 줍니다.,!/S(P>~gambler_peacekeeper*2)/S(P>~gambler_flashbang*1)/E(A>A*0.6)/X(ult_charge)/I(X>4)/S(P>~gambler_deadeye*1)/X(ult_charge)/S(M>ult_charge*-X),gun
 ~gambler_peacekeeper,피스 키퍼,0,AT,[일회성] [휘발성] (0.8 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][V]E(A>A*0.8)/S(M>ult_charge*1),gun
 ~gambler_flashbang,섬광탄,0,AT,[일회성] [보존성] (0.3 공격력)의 피해를 줍니다. 다음 턴동안 적의 {방어력}이 50% 감소합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.3)/E(M>defense*-bx0.5)/E(M>increase_defense*b)/S(M>ult_charge*1),shine
 ~gambler_deadeye,석양이 진다,1,AT,[일회성] [휘발성] 적은 다음 턴의 종료에 (2.0 공격력)만큼 피해를 받습니다.,[O][V]E(M>deadeye*Ax2),@
-#gambler_herotracer,영웅 변경: 트레이서,2,AT,[일회성] 어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 트레이서의 스킬셋을 얻습니다. (0.5 공격력)의 피해를 줍니다. 현재 체력을 {저장 체력}으로 저장합니다.,[O]!/S(P>~gambler_pulsepistol*2)/S(P>~gambler_recall*1)/E(A>A*0.5)/S(M>stored_health*L)/X(ult_charge)/I(X>4)/S(P>~gambler_pulsebomb*1)/S(M>ult_charge*-X),gun
+#gambler_herotracer,영웅 변경: 트레이서,2,AT,[일회성] 어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 트레이서의 스킬셋을 얻습니다. (0.5 공격력)의 피해를 줍니다. 현재 체력을 {저장 체력}으로 저장합니다.,[O]!/S(P>~gambler_pulsepistol*2)/S(P>~gambler_recall*1)/E(A>A*0.5)/S(M>stored_health*L)/X(ult_charge)/I(X>4)/S(P>~gambler_pulsebomb*1)/X(ult_charge)/S(M>ult_charge*-X),gun
 ~gambler_pulsepistol,펄스 쌍권총,0,AT,[일회성] [보존성] (0.7 공격력)의 피해를 줍니다. {궁극기 충전}을 2 얻습니다.,[O][K]E(A>A*0.7)/S(M>ult_charge*2),gun
 ~gambler_recall,시간 역행,0,UT,[일회성] [보존성] 자신의 체력을 {저장 체력} 수치와 같게 만듭니다. 만약 {저장 체력}이 없다면 효과가 발동되지 않습니다.,[O][K]!/X(stored_health)/S(M>stored_health*-X),@
 ~gambler_pulsebomb,펄스 폭탄,1,AT,[일회성] [보존성] (1.5 공격력)의 피해를 줍니다.,[O][K]E(A>A*1.5),explosion
-gambler_herosombra,영웅 변경: 솜브라,2,AT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 솜브라의 스킬셋을 얻습니다. (0.5 공격력)의 피해를 주고 적의 어빌리티 북에 <해킹당함>을 넣습니다.,!/S(P>~gambler_pistol*2)/S(P>~gambler_hack*1)/E(A>A*0.5)/E(K>~hacked*1)/X(ult_charge)/I(X>4)/S(P>~gambler_emp*1)/S(M>ult_charge*-X),gun
+gambler_herosombra,영웅 변경: 솜브라,2,AT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 솜브라의 스킬셋을 얻습니다. (0.5 공격력)의 피해를 주고 적의 어빌리티 북에 <해킹당함>을 넣습니다.,!/S(P>~gambler_pistol*2)/S(P>~gambler_hack*1)/E(A>A*0.5)/E(K>~hacked*1)/X(ult_charge)/I(X>4)/S(P>~gambler_emp*1)/X(ult_charge)/S(M>ult_charge*-X),gun
 ~gambler_pistol,기관권총,0,AT,[일회성] [보존성] (0.7 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.7)/S(M>ult_charge*1),gun
 ~gambler_hack,해킹,0,UT,[일회성] [보존성] 적의 어빌리티 북에 <해킹당함>을 넣습니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(K>~hacked*1)/S(M>ult_charge*1),@
 ~gambler_emp,EMP,1,AT,[일회성] [보존성] (1.0 공격력)의 피해를 줍니다. 적이 가지고 있는 방어가 피해량에 추가됩니다. 적의 어빌리티 북에 <해킹당함>을 2개 넣습니다.,[O][K]E(A>A+f)/E(K>~hacked*2),void
 ~hacked,해킹당함,1,IT,[일회성],[O],@
-gambler_heroashe,영웅 변경: 애쉬,2,AT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 애쉬의 스킬셋을 얻습니다. (0.6 공격력)의 피해를 줍니다.,!/S(P>~gambler_viper*2)/S(P>~gambler_dynamite*1)/E(A>A*0.6)/X(ult_charge)/I(X>4)/S(P>~gambler_bob*1)/S(M>ult_charge*-X),gun
+gambler_heroashe,영웅 변경: 애쉬,2,AT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 애쉬의 스킬셋을 얻습니다. (0.6 공격력)의 피해를 줍니다.,!/S(P>~gambler_viper*2)/S(P>~gambler_dynamite*1)/E(A>A*0.6)/X(ult_charge)/I(X>4)/S(P>~gambler_bob*1)/X(ult_charge)/S(M>ult_charge*-X),gun
 ~gambler_viper,바이퍼 소총,0,AT,[일회성] [휘발성] (0.8 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][V]E(A>A*0.8)/S(M>ult_charge*1),gun
 ~gambler_dynamite,다이너마이트,0,AT,[일회성] [보존성] (0.5 공격력)의 피해를 줍니다. {화상}을 2 부여합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.5)/E(M>burn*2)/S(M>ult_charge*1),explosion
 ~gambler_bob,B.O.B.,1,CT,[일회성] [보존성] [소환물] 공격력: (1.0 공격력) / 체력: (최대 체력의 15%) / 데미지 흡수율: 30%의 공격 보조 옴닉을 설치합니다.,[O][M]{A|H*0.15|0.3}[E]S(M>attack*Ax0.3),gun
-#gambler_heromercy,영웅 변경: 메르시,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 메르시의 스킬셋을 얻습니다. 최대 체력의 10%를 회복합니다.,!/S(P>~gambler_blaster*1)/S(P>~gambler_atkphoton*1)/S(P>~gambler_healphoton*1)/S(H>H*0.1)/X(ult_charge)/I(X>4)/S(P>~gambler_valkyrie*1)/S(M>ult_charge*-X),@
+#gambler_heromercy,영웅 변경: 메르시,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 메르시의 스킬셋을 얻습니다. 최대 체력의 10%를 회복합니다.,!/S(P>~gambler_blaster*1)/S(P>~gambler_atkphoton*1)/S(P>~gambler_healphoton*1)/S(H>H*0.1)/X(ult_charge)/I(X>4)/S(P>~gambler_valkyrie*1)/X(ult_charge)/S(M>ult_charge*-X),@
 ~gambler_blaster,카두세우스 블라스터,0,AT,[일회성] [보존성] (0.6 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.6)/S(M>ult_charge*1),gun
 ~gambler_atkphoton,카두세우스 공격광선,0,UT,[일회성] [보존성] 공격력이 25% 증가합니다. {궁극기 충전}을 1 얻습니다.,[O][K]S(M>attack*Ax0.25)/S(M>ult_charge*1),@
 ~gambler_healphoton,카두세우스 치료광선,0,UT,[일회성] [보존성] 최대 체력의 10%를 회복합니다. {궁극기 충전}을 1 얻습니다.,[O][K]S(H>H*0.1)/S(M>ult_charge*1),@
 ~gambler_valkyrie,발키리,1,UT,[일회성] [보존성] 공격성 어빌리티를 드로우합니다. {궁극기 충전}을 5 얻습니다.,[O][K]S(DAT>1)/S(M>ult_charge*5),@
-gambler_heroana,영웅 변경: 아나,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 아나의 스킬셋을 얻습니다. (1.0 공격력)만큼 내 체력을 회복합니다.,!/S(P>~gambler_bioticrifle*2)/S(P>~gambler_bioticgrenade*1)/S(H>A)/X(ult_charge)/I(X>4)/S(P>~gambler_nanoboost*1)/S(M>ult_charge*-X),@
+gambler_heroana,영웅 변경: 아나,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 아나의 스킬셋을 얻습니다. (1.0 공격력)만큼 내 체력을 회복합니다.,!/S(P>~gambler_bioticrifle*2)/S(P>~gambler_bioticgrenade*1)/S(H>A)/X(ult_charge)/I(X>4)/S(P>~gambler_nanoboost*1)/X(ult_charge)/S(M>ult_charge*-X),@
 ~gambler_bioticrifle,생체 소총,0,AT,[일회성] [보존성] (0.4 공격력)의 피해를 주고 같은 수치만큼 체력을 회복합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.4)/S(H>A*0.4)/S(M>ult_charge*1),gun
 ~gambler_bioticgrenade,생체 수류탄,0,UT,[일회성] [보존성] 적은 다음 턴 동안 방어력이 50% 감소하고 모든 회복 효과를 받을 수 없습니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(M>defense*-bx0.5)/E(M>increase_defense*b)/E(M>healban*1)/S(M>ult_charge*1),@
 ~gambler_nanoboost,넌 강해졌다! 돌격해!,1,UT,[일회성] [보존성] 이번 턴 동안 공격력이 2배가 됩니다. 다음 턴의 시작까지 받는 피해량이 30% 감소합니다.,[O][K]S(M>reduce_attack*A)/S(M>attack*A)/S(M>nanoboost*1),@
-gambler_herozenyatta,영웅 변경: 젠야타,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 젠야타의 스킬셋을 얻습니다. 최대 체력의 10%를 회복합니다.,!/S(P>~gambler_destructorb*1)/S(P>~gambler_harmonyorb*1)/S(P>~gambler_discordorb*1)/S(H>H*0.1)/X(ult_charge)/I(X>4)/S(P>~gambler_transcend*1)/S(M>ult_charge*-X),@
+gambler_herozenyatta,영웅 변경: 젠야타,2,UT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 젠야타의 스킬셋을 얻습니다. 최대 체력의 10%를 회복합니다.,!/S(P>~gambler_destructorb*1)/S(P>~gambler_harmonyorb*1)/S(P>~gambler_discordorb*1)/S(H>H*0.1)/X(ult_charge)/I(X>4)/S(P>~gambler_transcend*1)/X(ult_charge)/S(M>ult_charge*-X),@
 ~gambler_destructorb,파괴의 구슬,0,AT,[일회성] [보존성] (0.6 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.6)/S(M>ult_charge*1),thrust
 ~gambler_harmonyorb,조화의 구슬,0,UT,[일회성] [보존성] {조화}를 3 얻습니다. {궁극기 충전}을 1 얻습니다.,[O][K]S(M>harmony*3)/S(M>ult_charge*1),@
 ~gambler_discordorb,부조화의 구슬,0,UT,[일회성] [보존성] 적에게 {부조화}를 2 부여합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(M>discord*2)/S(M>ult_charge*1),@
