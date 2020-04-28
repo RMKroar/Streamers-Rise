@@ -200,25 +200,25 @@ chap_refactoring,게임 리팩토링,1,UT,[일회성] [보존성] 내 어빌리�
 chap_cutethumbnail,귀여운 썸네일,0,UT,[일회성] 다음 턴에 에너지를 1 얻습니다.,[O]S(M>more_energy*1),@
 chap_webtoon,찹툰 -동결 상태-,0,UT,공격성 어빌리티를 2개까지 드로우합니다.,S(DAT>2),@
 #chap_kuma,쿠마냥이,1,UT,[일회성] [보존성] 페이지에서 일회성 어빌리티를 하나 선택해 복제합니다.,[O][K]M(P>$|O)/S(P>$*1),@
-$azi_attack,양아지 펀치,1,AT,(0.9 공격력)의 피해를 줍니다. {아지쿤 게이지}를 1 얻습니다.,E(A>A*0.9)/S(M>azikun*1),hit
-$azi_defend,양아지 가드,1,UT,(0.9 방어력)의 방어를 얻습니다. {트최탱 게이지}를 1 얻습니다.,S(B>B*0.9)/S(M>tanker*1),@
-azi_nyanpunch,받아라! 냥냥펀치다!,1,AT,(1.0 공격력)의 피해를 줍니다. {아지쿤 게이지}가 없다면 {아지쿤 게이지}를 2 얻습니다.,E(A>A)/X(azikun)/I(X<1)/S(M>azikun*2),hitFire
-#azi_aquafirst,수중의 호흡 - 제 1형,1,UT,[보존성] 이번 턴동안 {공격력}이 2배가 됩니다. {아지쿤 게이지}를 2 얻습니다.,[K]S(M>reduce_attack*A)/S(M>attack*A)/S(M>azikun*2),@
+$azi_attack,양아지 펀치,1,AT,(0.8 공격력)의 피해를 줍니다. {아지쿤 게이지}를 1 얻습니다.,E(A>A*0.8)/S(M>azikun*1),hit
+$azi_defend,양아지 가드,1,UT,(0.8 방어력)의 방어를 얻습니다. {트최탱 게이지}를 1 얻습니다.,S(B>B*0.8)/S(M>tanker*1),@
+azi_nyanpunch,받아라! 냥냥펀치다!,1,AT,(1.0 공격력)의 피해를 줍니다. {아지쿤 게이지}가 없다면 {아지쿤 게이지}를 1 얻습니다.,E(A>A)/X(azikun)/I(X<1)/S(M>azikun*1),hitFire
+#azi_aquafirst,수중의 호흡 - 제 1형,1,UT,[보존성] 이번 턴동안 {공격력}이 30% 증가합니다. {아지쿤 게이지}를 2 얻습니다.,[K]S(M>reduce_attack*Ax0.3)/S(M>attack*Ax0.3)/S(M>azikun*2),@
 azi_whatsthat,그게 뭔데 씹덕새끼야!,1,AT,[보존성] (0.7 공격력)의 피해를 줍니다. {아지쿤 게이지}가 2배가 됩니다.,[K]E(A>A*0.7)/X(azikun)/S(M>azikun*X),roar
-azi_roar,찢어지는 사자후,2,AT,(1.4 공격력)의 피해를 줍니다. {아지쿤 게이지}를 1 얻습니다. 적의 어빌리티 북에 <청각 손실>을 넣습니다.,E(A>A*1.4)/S(M>azikun*1)/E(K>~being_deaf*1),roar
+azi_roar,찢어지는 사자후,2,AT,(1.1 공격력)의 피해를 줍니다. {아지쿤 게이지}를 1 얻습니다. 적의 어빌리티 북에 <청각 손실>을 넣습니다.,E(A>A*1.1)/S(M>azikun*1)/E(K>~being_deaf*1),roar
 azi_thunderbash,벽 력 일 섬,2,AT,(0.9 공격력) X {아지쿤 게이지} 중첩만큼 적에게 피해를 줍니다.,X(azikun)/E(A>A*0.9*X),slashThunder
-azi_helmet,단단한 헬멧,1,UT,(0.8 방어력)의 방어를 얻습니다. {충격 완화}를 2 얻고 {트최탱 게이지}를 1 얻습니다.,S(B>B*0.8)/S(M>shock_mitigation*2)/S(M>tanker*1),@
-azi_twitchtanker,트위치 대표 탱커,2,UT,(1.5 방어력)의 방어를 얻습니다. {트최탱 게이지}를 4 얻습니다.,S(B>B*1.5)/S(M>tanker*4),@
-azi_notinsane,화 안났다고오!!!,1,AT,적은 (1.0 방어력)만큼 체력을 잃습니다.,E(H>-B),fire
+azi_helmet,단단한 헬멧,1,UT,(0.6 방어력)의 방어를 얻습니다. {충격 완화}를 2 얻고 {트최탱 게이지}를 1 얻습니다.,S(B>B*0.6)/S(M>shock_mitigation*2)/S(M>tanker*1),@
+azi_twitchtanker,트위치 대표 탱커,2,UT,(1.4 방어력)의 방어를 얻습니다. {트최탱 게이지}를 3 얻습니다.,S(B>B*1.4)/S(M>tanker*3),@
+azi_notinsane,화 안났다고오!!!,1,AT,적은 (0.8 방어력)만큼 체력을 잃습니다.,E(H>-B*0.8),fire
 azi_bellypang,배박수 팡팡,0,UT,[보존성] {트최탱 게이지}가 2배가 됩니다.,[K]X(tanker)/S(M>tanker*X),@
-#azi_brother,양노을 방패,3,CT,[일회성] [소환물] 공격력: 0 / 체력: (최대 체력의 40%) / 데미지 흡수율: 80%의 양노을을 소환합니다. 내 턴이 시작할 때 {트최탱 게이지}를 2 얻습니다.,[O][M]{0|H*0.4|0.8}[S]S(M>tanker*2),@
+#azi_brother,양노을 방패,3,CT,[일회성] [소환물] 공격력: 0 / 체력: (최대 체력의 40%) / 데미지 흡수율: 80%의 양노을을 소환합니다. 내 턴이 시작할 때 {트최탱 게이지}를 1 얻습니다.,[O][M]{0|H*0.4|0.8}[S]S(M>tanker*1),@
 #azi_oldversion,구아지의 형상,0,UT,[보존성] {아지쿤 게이지}의 중첩만큼 {트최탱 게이지}를 얻습니다.,[K]X(azikun)/S(M>tanker*X),@
 #azi_honeyjam,♪ 배그 꿀잼,0,UT,[보존성] {트최탱 게이지}의 중첩만큼 {아지쿤 게이지}를 얻습니다.,[K]X(tanker)/S(M>azikun*X),@
 azi_comic,추억의 양씨만화,1,UT,{아지쿤 게이지}와 {트최탱 게이지}를 2 얻습니다. 어빌리티를 드로우합니다.,S(M>azikun*2)/S(M>tanker*2)/S(D>1),@
 azi_hottuck,전설의 호떡,1,UT,[일회성] 최대 체력의 15%를 회복합니다. {서러움}을 1 얻습니다.,[O]S(H>H*0.15)/S(M>sorrow*1),@
 azi_udon,(우동),1,UT,[보존성] 적의 어빌리티 페이지에 있는 무작위 어빌리티를 소멸시킵니다. 어빌리티를 드로우합니다.,[K]R(p>$)/Q($),@
 azi_cashholic,돈미양,0,UT,[일회성] 어빌리티를 2개 드로우합니다.,[O]S(D>2),@
-azi_halchak,핥-쨕,1,UT,{아지쿤 게이지}가 없으면 어빌리티를 2개 드로우합니다. 추가로 {트최탱 게이지}가 없으면 에너지를 2 회복합니다.,X(azikun)/I(X<1)/S(D>2)/X(tanker)/I(X<1)/S(E>2),@
+azi_halchak,핥-짝,1,UT,{아지쿤 게이지}가 없으면 어빌리티를 2개 드로우합니다. 추가로 {트최탱 게이지}가 없으면 에너지를 2 회복합니다.,X(azikun)/I(X<1)/S(D>2)/X(tanker)/I(X<1)/S(E>2),@
 azi_nonsense,상상도 못한 양소리,1,UT,(0.6 방어력)의 방어를 얻습니다. {아지쿤 게이지}와 {트최탱 게이지}를 1 얻습니다. 적에게 {혼미}를 1 부여합니다.,S(B>B*0.6)/S(M>azikun*1)/S(M>tanker*1)/E(M>confusion*1),@
 azi_uglyvoice,빻은 목소리,1,UT,(0.7 방어력)의 방어를 얻습니다. 적에게 {답답}을 1 부여합니다.,S(B>B*0.7)/E(M>stuffy*1),@
 azi_glasswashing,유리창 닦기,1,UT,[보존성] {탈진}에 걸려있는 경우 체력을 전부 회복하고 탈진 중첩을 전부 제거합니다.,[K]X(exhaust)/I(X>0)/S(M>exhaust*-X)/S(H>H),@
