@@ -75,4 +75,5 @@ donot_focus,과몰입 방지턱,1,AT,[일회성] [보존성] (0.8 공격력)의 
 ~ping,핑,1,IT,[일회성],[O],@
 ~spoofing_packet,스푸핑 패킷,3,IT,[일회성],[O],@
 ~rhapsody,광시곡,-1,IT,사용 불가.,,@
-~malicious_packet,악성 패킷,-1,IT,사용 불가.,,@
+~bad_effect,악영향,-1,IT,사용 불가.,,@
+~hindrance,진행 방해,-1,IT,[휘발성] 사용 불가.,[V],@
