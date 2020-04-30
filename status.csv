@@ -61,3 +61,5 @@ discord,부조화,dec_end,받는 피해량이 부조화 중첩 당 20% 증가합
 transcend,초월,dec_dam,받는 피해량이 0이 됩니다. 또한 방어를 무시하고 들어오는 피해에도 면역이 됩니다.,[B]Y(0)
 ggamxx,x_x,del_end,공격성 어빌리티를 사용할 때마다 내 어빌리티 북에 <붕어>를 넣습니다.,[U|AT]S(K>~gambler_carp*1)
 metaphor,비유ㅇ신,del_end,유틸성 어빌리티를 사용할 때마다 내 어빌리티 북에 <붕어>를 넣습니다.,[U|UT]S(K>~gambler_carp*1)
+poison_mist,독성 구름,normal,내 턴이 시작할 때 독성 구름 중첩 수치만큼 {중독}을 얻습니다.,[S]S(M>poison*W)
+critical_damage,치명상,normal,내 턴이 시작할 때 치명상 중첩 수치만큼 {출혈}을 얻습니다.,[S]S(M>bleed*W)
