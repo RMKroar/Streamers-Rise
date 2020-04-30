@@ -297,12 +297,12 @@ ai_guerilla,치고 빠지기,1,AT,E,가지고 있는 방어만큼 피해를 줍�
 ai_follow,팔로우,0,UT,P,어빌리티를 드로우합니다.,S(D>1),@
 ai_subscription,구독,1,UT,P,[일회성] 어빌리티를 3개 드로우합니다.,[O]S(D>3),@
 ai_winevent,이벤트 당첨,0,UT,F,에너지를 1 회복합니다.,S(E>1),@
-ai_badcomment,트위치 서비스 공격,2,AT,N,(1.0 공격력)의 피해를 줍니다. 적의 스토리지에 <악성 패킷>을 넣습니다.,E(A>A)/E(N>~malicious_packet*1),hit
-ai_plastering,미확인 실행파일,0,UT,P,적의 어빌리티 북에 <핑>을 넣습니다. 어빌리티를 드로우합니다.,E(K>~ping*1)/S(D>1),@
-ai_mentionothers,미확인 플러그인,1,AT,N,(0.7 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <핑>을 넣습니다.,E(A>A*0.7)/E(K>~ping*1),hit
-ai_agro,미확인 매크로,1,AT,N,(0.8 공격력)의 피해를 줍니다. 적의 스토리지에 <트래픽>을 넣습니다.,E(A>A*0.8)/E(N>~traffic*1),hit
-ai_squandering,위협적인 사이트 접근,2,UT,F,[서장] [일회성] 적의 어빌리티 북에 <트래픽>과 <핑>을 각 2개씩 넣습니다.,[O]E(K>~traffic*2)/E(K>~ping*2),@
-ai_maliciousbot,악성 뷰봇,3,CT,C,내 턴이 끝날 때 적의 스토리지에 <트래픽>과 <핑>을 각 1개씩 넣습니다.,[E]E(N>~traffic*1)/E(N>~ping*1),@
+ai_badcomment,의미없는 도배,2,AT,N,(1.0 공격력)의 피해를 줍니다. 적의 스토리지에 <악영향>을 넣습니다.,E(A>A)/E(N>~bad_effect*1),hit
+ai_plastering,지나친 과몰입,0,UT,P,적의 어빌리티 북에 <갑분싸>를 넣습니다. 어빌리티를 드로우합니다.,E(K>~cool_atmosphere*1)/S(D>1),@
+ai_mentionothers,뇌절,1,AT,N,(0.7 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <갑분싸>를 넣습니다.,E(A>A*0.7)/E(K>~cool_atmosphere*1),hit
+ai_agro,어그로,1,AT,N,(0.8 공격력)의 피해를 줍니다. 적의 스토리지에 <진행 방해>를 넣습니다.,E(A>A*0.8)/E(N>~hindrance*1),hit
+ai_squandering,눈치 없는 도네이션,2,UT,F,[서장] [일회성] 적의 어빌리티 북에 <진행 방해>와 <갑분싸>를 각 2개씩 넣습니다.,[O]E(K>~hindrance*2)/E(K>~cool_atmosphere*2),@
+ai_maliciousbot,악성 뷰봇,3,CT,C,내 턴이 끝날 때 적의 스토리지에 <진행 방해>와 <갑분싸>를 각 1개씩 넣습니다.,[E]E(N>~hindrance*1)/E(N>~cool_atmosphere*1),@
 ai_cashdeal,돈으로 때리기,0,AT,F,적의 방어만큼 피해를 줍니다.,E(A>f),hit
 ai_chatrush,채팅 러쉬,0,UT,F,걸려있는 상태이상을 전부 제거합니다.,!,@
 ai_kookooroo,쿠쿠루쿠쿠,1,UT,F,적의 어빌리티 북에 있는 무작위 어빌리티를 소멸시킵니다.,R(k>$)/Q($),@
