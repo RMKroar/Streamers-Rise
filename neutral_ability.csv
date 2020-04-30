@@ -72,9 +72,7 @@ donot_focus,과몰입 방지턱,1,AT,[일회성] [보존성] (0.8 공격력)의 
 ~dice_five,주사위 눈 5,2,AT,[일회성] (5.0 공격력)의 피해를 줍니다.,[O]E(A>A*5),hit
 ~dice_six,주사위 눈 6,1,UT,[일회성] (6.0 방어력)의 방어를 얻습니다.,[O]S(B>B*6),@
 ~traffic,트래픽,-1,IT,[휘발성] 사용 불가.,[V],@
-~ping,핑,2,IT,[일회성],[O],@
+~ping,핑,1,IT,[일회성],[O],@
 ~spoofing_packet,스푸핑 패킷,3,IT,[일회성],[O],@
 ~rhapsody,광시곡,-1,IT,사용 불가.,,@
-~malicious_viewer,악성 시청자,1,IT,[일회성],[O],@
-~malicious_comment,악플러,-1,IT,사용 불가.,,@
-~idiot_viewer,무개념 시청자,-1,IT,[휘발성] 사용 불가.,[V],@
+~malicious_packet,악성 패킷,-1,IT,사용 불가.,,@
