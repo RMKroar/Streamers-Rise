@@ -49,14 +49,14 @@ subscriber_event,구독자 이벤트,1,UT,(0.5 방어력)의 방어를 얻습니
 hosting_bomb,호스팅 폭탄,2,AT,내 스토리지에 있는 어빌리티 수만큼 (0.25 공격력)의 피해를 줍니다.,X(N>@)/E(A>A*0.25*X),explosion
 awayfrom_keyboard,자리 비움,2,UT,페이지에 있는 모든 어빌리티를 버리고 그 수만큼 (0.8 방어력)의 방어를 얻습니다.,X(P>@)/R(P>@)/T(@>PN)/S(B>B*0.8*X),@
 oneday_rest,1일 휴방,0,UT,[일회성] {재생}을 8 얻습니다.,[O]S(M>restoration*8),@
-clear_chatlog,채팅 로그 정리,1,UT,[일회성] [보존성] 자신에게 걸려있는 모든 상태이상을 제거합니다.,[O][K]!,@
+clear_chatlog,채팅 로그 정리,0,UT,[일회성] [보존성] 자신에게 걸려있는 모든 상태이상을 제거합니다.,[O][K]!,@
 #make_engage,끌어들이기,2,UT,[일회성] [보존성] 자신에게 걸려있는 모든 상태이상을 적에게도 부여합니다.,[O][K]!,@
 clear_records,녹화본 정리,1,UT,[일회성] [보존성] 내 어빌리티 북에 있는 모든 방해성 어빌리티를 소멸시킵니다.,[O][K]R(K>@|IT)/Q(@),@
 topic_change,화제 전환,1,UT,[일회성] [보존성] 내 어빌리티 북에 있는 모든 방해성 어빌리티가 <자연스러운 대화>로 변화합니다.,[O][K]R(K>@|IT)/Z(@>~natural_dialog),@
 ~natural_dialog,자연스러운 대화,0,UT,[일회성] [휘발성] 어빌리티를 드로우합니다.,[V][O]S(D>1),@
 counter_punch,카운터 펀치,2,AT,(1.0 공격력)의 피해를 줍니다. {반격}을 5 얻습니다.,E(A>A)/S(M>counter*5),hitFire
 donot_focus,과몰입 방지턱,1,AT,[일회성] [보존성] (0.8 공격력)의 피해를 줍니다. 적은 다음 턴동안 회복 효과를 받을 수 없습니다.,[O][K]E(A>A*0.8)/E(M>healban*1),hitFire
-#subcription_present,구독권 선물!,3,UT,[일회성] [보존성] 다음 4번의 공격에 대해 피해를 받지 않습니다. 방어를 무시하고 들어오는 피해에도 면역이 됩니다.,[O][K]S(M>transcend*4),@
+#subcription_present,구독권 선물!,2,UT,[일회성] [보존성] 다음 3번의 공격에 대해 피해를 받지 않습니다. 방어를 무시하고 들어오는 피해에도 면역이 됩니다.,[O][K]S(M>transcend*3),@
 #joinable_bigcontent,대규모 시참,3,UT,[일회성] 어빌리티 북에 <시청자 참여> 3개와 <진행자 스트리머>를 넣습니다.,[O]S(K>~join_audience*3)/S(K>~progress_streamer*1),@
 ~join_audience,시청자 참여,-1,IT,사용 불가. 특별한 기능이 숨겨져 있습니다.,,@
 ~progress_streamer,진행자 스트리머,0,UT,페이지에서 <시청자 참여>가 3개 이상 있다면 게임에서 승리합니다.,R(P>@|~join_audience)/X(@)/I(X>2)/!,@
