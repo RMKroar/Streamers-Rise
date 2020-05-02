@@ -171,12 +171,12 @@ badgirl_staff,악동부의 병상,1,UT,[일회성] [보존성] 페이지에서 �
 #badgirl_mynameis,내 이름 김고추,1,UT,[보존성] 어빌리티 북에 <연령 제한 컨텐츠>를 넣습니다. 어빌리티를 3개 드로우합니다.,[K]S(K>~badgirl_adultcontent*1)/S(D>3),@
 $chap_attack,고차비 공격,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),hit
 $chap_defend,고차비 방어,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@
-chap_sweetpotato,화난 찹쌀이: 고구마맛,1,UT,(0.9 방어력)의 방어를 얻습니다. <고구마 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.9)/S(K>~mochi_sweetpotato*2),@
-chap_pumpkin,뾰루퉁한 찹쌀이: 호박맛,1,UT,(0.9 방어력)의 방어를 얻습니다. <호박 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.9)/S(K>~mochi_pumpkin*2),@
-chap_banana,신난 찹쌀이: 바나나맛,1,UT,(0.9 방어력)의 방어를 얻습니다. <바나나 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.9)/S(K>~mochi_banana*2),@
-chap_strawberry,행복한 찹쌀이: 딸기맛,1,UT,(0.9 방어력)의 방어를 얻습니다. <딸기 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.9)/S(K>~mochi_strawberry*2),@
-chap_greentea,평온한 찹쌀이: 녹차맛,1,UT,(0.9 방어력)의 방어를 얻습니다. <녹차 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.9)/S(K>~mochi_greentea*2),@
-#chap_kiwi,슬픈 찹쌀이: 키위맛,1,UT,(0.9 방어력)의 방어를 얻습니다. <키위 찹쌀이> 토큰을 내 어빌리티 북에 넣습니다.,S(B>B*0.9)/S(K>~mochi_kiwi*1),@
+chap_sweetpotato,화난 찹쌀이: 고구마맛,1,UT,(0.6 방어력)의 방어를 얻습니다. <고구마 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.6)/S(K>~mochi_sweetpotato*2),@
+chap_pumpkin,뾰루퉁한 찹쌀이: 호박맛,1,UT,(0.6 방어력)의 방어를 얻습니다. <호박 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.6)/S(K>~mochi_pumpkin*2),@
+chap_banana,신난 찹쌀이: 바나나맛,1,UT,(0.6 방어력)의 방어를 얻습니다. <바나나 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.6)/S(K>~mochi_banana*2),@
+chap_strawberry,행복한 찹쌀이: 딸기맛,1,UT,(0.6 방어력)의 방어를 얻습니다. <딸기 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.6)/S(K>~mochi_strawberry*2),@
+chap_greentea,평온한 찹쌀이: 녹차맛,1,UT,(0.6 방어력)의 방어를 얻습니다. <녹차 찹쌀이> 토큰 2개를 내 어빌리티 북에 넣습니다.,S(B>B*0.6)/S(K>~mochi_greentea*2),@
+#chap_kiwi,슬픈 찹쌀이: 키위맛,1,UT,(0.6 방어력)의 방어를 얻습니다. <키위 찹쌀이> 토큰을 내 어빌리티 북에 넣습니다.,S(B>B*0.6)/S(K>~mochi_kiwi*1),@
 ~mochi_sweetpotato,고구마 찹쌀이,0,AT,[일회성] [휘발성] (0.2 공격력)의 피해를 줍니다. {찹쌀이}를 2 부여합니다. 어빌리티를 드로우합니다.,[V][O]E(A>A*0.2)/E(M>chap*2)/S(D>1),hit
 ~mochi_pumpkin,호박 찹쌀이,0,AT,[일회성] [휘발성] (0.4 공격력)의 피해를 줍니다. {찹쌀이}를 1 부여합니다. 공격성 어빌리티를 드로우합니다.,[V][O]E(A>A*0.4)/E(M>chap*1)/S(D>1),hit
 ~mochi_banana,바나나 찹쌀이,0,UT,[일회성] [휘발성] (0.5 방어력)의 방어를 얻습니다. 적에게 {찹쌀이}를 1 부여합니다. 어빌리티를 드로우합니다.,[V][O]S(B>B*0.5)/E(M>chap*1)/S(D>1),@
@@ -193,7 +193,7 @@ chap_intelligence,공대여신의 지성,1,CT,[카운트] 내가 어빌리티를
 chap_yesss,눼에에...,1,UT,(1.0 방어력)의 방어를 얻습니다. 내 어빌리티 북에 들어있는 어빌리티의 개수가 10개 이상이면 어빌리티를 드로우합니다.,S(B>B)/X(K>@)/I(X>9)/S(D>1),@
 #chap_chabc,Ch.ABC,0,UT,내 어빌리티 북에 들어있는 어빌리티의 개수가 10개 이상이면 에너지를 1 회복합니다.,X(K>@)/I(X>9)/S(E>1),@
 chap_refactoring,게임 리팩토링,1,UT,[일회성] [보존성] 내 어빌리티 북에 들어있는 방해성 어빌리티를 전부 소멸시키고 그 개수만큼 {재생}을 얻습니다.,[O][K]R(K>@|IT)/X(@)/Q(@)/S(M>restoration*X),@
-#chap_taran,타란~,3,UT,[보존성] 이번 턴 동안 어빌리티를 사용할 때마다 적에게 (1.0 공격력)의 피해를 줍니다.,[K]S(M>taran*1),@
+#chap_taran,타란~,3,UT,[보존성] 이번 턴 동안 어빌리티를 사용할 때마다 적에게 (0.7 공격력)의 피해를 줍니다.,[K]S(M>taran*1),@
 #chap_luckychab,최강 운차비,1,UT,[일회성] 다음 턴에 받는 모든 피해를 30% 확률로 회피합니다.,[O]S(M>luck*1),@
 chap_cutethumbnail,귀여운 썸네일,0,UT,[일회성] 다음 턴에 에너지를 1 얻습니다.,[O]S(M>more_energy*1),@
 chap_webtoon,찹툰 -동결 상태-,0,UT,공격성 어빌리티를 2개까지 드로우합니다.,S(DAT>2),@
@@ -237,11 +237,11 @@ gambler_heroorisa,영웅 변경: 오리사,2,UT,어빌리티 페이지에 있는
 ~gambler_fusiondriver,융합 기관포,0,AT,[일회성] [보존성] (0.6 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.6)/S(M>ult_charge*1),explosion
 ~gambler_halt,꼼짝 마!,0,UT,[일회성] [보존성] 적에게 {진형 붕괴}를 1 부여합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(M>formation_destroy*1)/S(M>ult_charge*1),@
 ~gambler_fortify,방어 강화,0,UT,[일회성] [보존성] {궁극기 충전}을 제외한 자신에게 걸려있는 상태이상을 전부 해제합니다. 그 후 {충격 완화}를 2 얻고 {궁극기 충전}을 1 얻습니다.,[O][K]!/S(M>shock_mitigation*2)/S(M>ult_charge*1),@
-~gambler_supercharger,초강력 증폭기,1,CT,[일회성] [보존성] [소환물] 공격력: 0 / 체력: (최대 체력의 30%) / 데미지 흡수율: 100%의 초강력 증폭기를 설치합니다. 내 턴이 끝날 때 {공격력}이 30% 증가합니다.,[O][M]{0|H*0.3|1}[E]S(M>attack*Ax0.3),@
+~gambler_supercharger,초강력 증폭기,1,CT,[일회성] [보존성] [소환물] 공격력: 0 / 체력: (최대 체력의 30%) / 데미지 흡수율: 100%의 초강력 증폭기를 설치합니다. 내 턴이 끝날 때 {공격력}이 30% 증가합니다.,[O][K][M]{0|H*0.3|1}[E]S(M>attack*Ax0.3),@
 gambler_heromccree,영웅 변경: 맥크리,2,AT,어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 맥크리의 스킬셋을 얻습니다. (0.6 공격력)의 피해를 줍니다.,!/S(P>~gambler_peacekeeper*2)/S(P>~gambler_flashbang*1)/E(A>A*0.6)/X(ult_charge)/I(X>4)/S(P>~gambler_deadeye*1),gun
 ~gambler_peacekeeper,피스 키퍼,0,AT,[일회성] [휘발성] (0.8 공격력)의 피해를 줍니다. {궁극기 충전}을 1 얻습니다.,[O][V]E(A>A*0.8)/S(M>ult_charge*1),gun
 ~gambler_flashbang,섬광탄,0,AT,[일회성] [보존성] (0.3 공격력)의 피해를 줍니다. 다음 턴동안 적의 {방어력}이 50% 감소합니다. {궁극기 충전}을 1 얻습니다.,[O][K]E(A>A*0.3)/E(M>defense*-bx0.5)/E(M>increase_defense*b)/S(M>ult_charge*1),shine
-~gambler_deadeye,석양이 진다,1,AT,[일회성] [휘발성] 적은 다음 턴의 종료에 (2.0 공격력)만큼 피해를 받습니다.,[O][V]E(M>deadeye*Ax2),@
+~gambler_deadeye,석양이 진다,1,AT,[일회성] [보존성] 적은 다음 턴의 종료에 (3.0 공격력)만큼 피해를 받습니다.,[O][K]E(M>deadeye*Ax3),@
 #gambler_herotracer,영웅 변경: 트레이서,2,AT,[일회성] 어빌리티 페이지에 있는 일회성 어빌리티를 전부 소멸시키고 트레이서의 스킬셋을 얻습니다. (0.5 공격력)의 피해를 줍니다. 현재 체력을 {저장 체력}으로 저장합니다.,[O]!/S(P>~gambler_pulsepistol*2)/S(P>~gambler_recall*1)/E(A>A*0.5)/S(M>stored_health*L)/S(M>return_effective*1)/X(ult_charge)/I(X>4)/S(P>~gambler_pulsebomb*1),gun
 ~gambler_pulsepistol,펄스 쌍권총,0,AT,[일회성] [보존성] (0.7 공격력)의 피해를 줍니다. {궁극기 충전}을 2 얻습니다.,[O][K]E(A>A*0.7)/S(M>ult_charge*2),gun
 ~gambler_recall,시간 역행,0,UT,[일회성] [보존성] 자신의 체력을 {저장 체력} 수치와 같게 만듭니다. 만약 {저장 체력}이 없다면 효과가 발동되지 않습니다.,[O][K]!/X(stored_health)/S(M>stored_health*-X),@
