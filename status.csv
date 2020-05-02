@@ -64,4 +64,4 @@ metaphor,비유ㅇ신,del_end,유틸성 어빌리티를 사용할 때마다 내 
 poison_mist,독성 구름,normal,내 턴이 시작할 때 독성 구름 중첩 수치만큼 {중독}을 얻습니다.,[S]S(M>poison*W)
 critical_damage,치명상,normal,내 턴이 시작할 때 치명상 중첩 수치만큼 {출혈}을 얻습니다.,[S]S(M>bleed*W)
 return_effective,역행 유효성,del_start,트레이서가 지금의 시각을 기억합니다. 내 턴이 시작할 때 {역행 제한}을 얻습니다.,[S]S(M>return_restraint*1)
-return_restraint,역행 제한,del_end,내 턴이 끝날 때 페이지에 있는 모든 <시간 역행>이 소멸합니다.,[E]R(P>@|~gambler_recall)/Q(@)
+return_restraint,역행 제한,del_end,내 턴이 끝날 때 페이지에 있는 <시간 역행>이 소멸합니다.,[E]R(P>$|~gambler_recall)/Q($)
