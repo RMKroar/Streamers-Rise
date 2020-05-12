@@ -43,7 +43,7 @@ collet_penmission,뗑컨 잠입 미션,1,CT,내 턴이 끝날 때 적의 어빌�
 collet_pencharge,뗑컨 돌격!,1,UT,이번 턴에 어빌리티를 사용할 때마다 적의 어빌리티 북에 <뗑컨>을 넣습니다.,S(M>pen_charge*1),@
 #collet_pencopy,뗑컨 복제,2,UT,[일회성] 적의 어빌리티 북에 있는 <뗑컨> 수를 2배로 만듭니다.,[O]X(k>~penguin)/E(K>~penguin*X),@
 collet_pengroup,뗑컨 받아라!,0,UT,[일회성] 적의 어빌리티 북에 <뗑컨>을 2개 넣습니다.,[O]E(K>~penguin*2),@
-#collet_penacid,맹독성 뗑컨,1,UT,[보존성] 적의 어빌리티 북에 있는 <뗑컨> 수의 8배만큼 적에게 {중독}을 부여합니다.,X(k>~penguin)/E(M>poison*Xx8),@
+#collet_penacid,맹독성 뗑컨,1,UT,[보존성] 적의 어빌리티 북에 있는 <뗑컨> 수의 8배만큼 적에게 {중독}을 부여합니다.,[K]X(k>~penguin)/E(M>poison*Xx8),@
 collet_battleground,배그zl존 코렛트,1,UT,[일회성] <구급 상자> 2개를 페이지에 추가하고 <뒤집힌 자동차>를 어빌리티 북에 넣습니다.,[O]S(P>~collet_firstaid*2)/S(K>~collet_brokencar*1),@
 ~collet_firstaid,구급 상자,0,UT,[일회성] [보존성] 최대 체력의 10%를 회복하고 어빌리티를 드로우합니다.,[O][K]S(H>H*0.1)/S(D>1),@
 ~collet_brokencar,뒤집힌 자동차,-1,IT,사용 불가.,,@
