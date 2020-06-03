@@ -282,6 +282,7 @@ gambler_meec,호에에엥,0,UT,[일회성] 공격성 어빌리티와 유틸성 �
 #gambler_singer,감범준! 감범준!,1,UT,[보존성] 페이지에서 일회성 어빌리티를 선택해 복제합니다.,[K]M(P>$|O)/S(P>$*1),@,
 $cherrypach_attack,꽃핀 공격,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),hit,
 $cherrypach_song,♬꽃핀 라팡,1,UT,(0.8 방어력)만큼 체력을 회복합니다.,S(H>B*0.8),@,
+~cherrypach_debris,노래의 흔적,0,IT,최대 체력의 2%를 잃습니다. 어빌리티를 드로우합니다.,S(H>-H*0.02)/S(D>1),@,
 cherrypach_song_redline,♬홍연,1,UT,(0.3 방어력)만큼 체력을 회복합니다. 이번 턴에 내가 체력을 회복할 때마다 적에게 (0.7 공격력)의 피해를 줍니다.,S(H>B*0.3)/S(M>song_redline*1),@,
 cherrypach_song_idol,♬나 아이돌 선언!,1,UT,(0.3 방어력)만큼 체력을 회복합니다. 이번 턴에 내가 체력을 회복할 때마다 {공격력}과 {방어력}이 10% 증가합니다.,S(H>B*0.3)/S(M>song_idol*1),@,
 cherrypach_song_suicide,♬자상무색,1,UT,(0.3 방어력)만큼 체력을 회복합니다. 이번 턴에 내가 체력을 회복할 때마다 적의 어빌리티 북에 <자상무색>을 넣습니다.,S(H>B*0.3)/S(M>song_suicide*1),@,
