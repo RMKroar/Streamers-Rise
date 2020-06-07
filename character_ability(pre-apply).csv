@@ -159,7 +159,7 @@ badgirl_secdrip,파괴적인 19금 드립,1,AT,(1.5 공격력)의 피해를 줍�
 ~badgirl_adultcontent,연령 제한 컨텐츠,1,IT,[일회성] 최대 체력의 5%를 소비하여 저장합니다. {매운 맛}을 3 얻습니다.,[O]S(M>stored_health*Hx0.05)/S(H>-H*0.05)/S(M>spice*3),@,
 badgirl_uncontrollable,주체할 수 없는 매운 맛,1,CT,공격성 어빌리티를 사용할 때마다 {매운 맛}을 1 얻습니다.,[U|AT]S(M>spice*1),@,
 badgirl_yellowcall,노란 딱지의 부름,0,UT,[일회성] [보존성] 페이지에서 무작위 방해성 어빌리티 하나를 소멸시키는 것으로 {공격력}이 10% 증가합니다. 페이지에 <노란 딱지의 부름>을 추가합니다.,[O][K]R(P>$|IT)/Q($)/S(M>attack*Ax0.1)/S(P>badgirl_yellowcall*1),@,
-badgirl_slavery,노예화,3,UT,[보존성] 적에게 부여된 {구속} 중첩이 적의 현재 체력보다 높다면 라운드를 승리합니다.,!,@,
+badgirl_slavery,노예화,3,UT,[보존성] 적에게 부여된 {구속} 중첩이 적의 현재 체력보다 높다면 라운드를 승리합니다.,[K]X(_bind)/I(l<X)/!,@,
 badgirl_oppress,확실한 제압,1,AT,(0.9 공격력)의 피해를 줍니다. 적 최대 체력의 5%만큼 {구속}을 부여합니다.,E(A>A*0.9)/E(M>bind*hx0.05),hit,
 badgirl_promise,강제된 혼약,0,UT,적 최대 체력의 8%만큼 {구속}을 부여합니다.,E(M>bind*hx0.08),@,
 #badgirl_unguardable,가불기 노예빵,1,UT,[보존성] 적이 가지고 있는 방어만큼 적에게 {구속}을 부여합니다.,[K]E(M>bind*f),@,
