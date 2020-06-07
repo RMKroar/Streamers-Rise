@@ -311,7 +311,7 @@ cherrypach_yan_greed,얀핀: 소유욕,1,UT,어빌리티를 2개 드로우합니
 cherrypach_yan_chain,얀핀: 쇠사슬,1,AT,(0.8 공격력)의 피해를 주고 {드로우 감소}를 1 부여합니다. {얀데레}를 1 얻습니다.,E(A>A*0.8)/E(M>less_draw*1)/S(M>yan*1),hit,
 ~cherrypach_chain,얀핀: 고문 상자,1,AT,(1.0 공격력)의 피해를 주고 {드로우 감소}와 {에너지 손실}을 1 부여합니다.,E(A>A)/E(M>less_draw*1)/E(M>less_energy*1).,hitFire,
 cherrypach_piggy,ㄲㄷㅍㅈ,0,UT,페이지에서 어빌리티를 선택해 소멸시키고 어빌리티를 2개 드로우합니다.,M(P>$)/Q($)/S(D>2),@,
-#cherrypach_dance,기쁨의 춤을 추자!,0,UT,[일회성] [보존성] 페이지에서 전용 어빌리티를 선택해 복제합니다.,[O][K]M(P>$|^cherrypach)/S(P>1),@,
+#cherrypach_dance,기쁨의 춤을 추자!,0,UT,[일회성] [보존성] 페이지에서 전용 어빌리티를 선택해 복제합니다.,[O][K]M(P>$|^cherrypach)/S(P>$*1),@,
 $zzon_attack,쫀득 공격,1,AT,(0.9 공격력)의 피해를 줍니다. 페이지의 컨텐츠 어빌리티를 선택해 재미를 더합니다.,E(A>A*0.9)/M(P>$|^zzon_content)/!,hit,
 $zzon_defense,쫀득 방어,1,UT,(0.9 방어력)의 방어를 얻습니다. 페이지의 컨텐츠 어빌리티를 선택해 재미를 더합니다.,S(B>B*0.9)/M(P>$|^zzon_content)/!,@,
 zzon_content_mc_0,컨텐츠: 전통의 마인크래프트,1,AT,(0.6 공격력)의 피해를 줍니다. 페이지의 컨텐츠 어빌리티를 선택해 재미를 더합니다.,E(A>A*0.6)/M(P>$|^zzon_content)/!,hit,
