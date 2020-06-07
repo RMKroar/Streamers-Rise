@@ -121,7 +121,7 @@ ganggi_concert,마시멜로 콘서트 티켓,2,UT,[일회성] [보존성] 페이
 #ganggi_sentimental,내가 죽으려고 생각한 것은,2,UT,[일회성] [보존성] 다음 4번의 공격에 의해 받는 피해량이 절반이 됩니다.,[O][K]S(M>sentiment*4),@,
 $taem_attack,탬탬버린 펀치,1,AT,(1.0 공격력)의 피해를 줍니다.,E(A>A),hit,
 $taem_defend,탬탬버린 방어,1,UT,(1.0 방어력)의 방어를 얻습니다.,S(B>B),@,
-$taem_littletangerine,작은 밀감이,0,UT,[서장] [보존성] 이번 턴에 공격성 어빌리티를 사용할 때마다 적이 가진 상태이상의 수 X (0.3 공격력)의 추가 피해를 줍니다.,[I][K]S(M>tangerine*1),@,
+$taem_littletangerine,작은 밀감이,0,UT,[서장] [보존성] 이번 턴에 공격성 어빌리티를 사용할 때마다 적이 가진 상태이상의 수 X (0.1 공격력)의 추가 피해를 줍니다.,[I][K]S(M>tangerine*1),@,
 taem_bomb,밀감 폭탄,1,AT,(0.8 공격력)의 피해를 주고 {독성 구름}을 적 최대 체력의 2%만큼 부여합니다.,E(A>A*0.8)/E(M>poison_mist*hx0.02),explosion,
 taem_curse,밀감의 저주,1,AT,(0.9 공격력)의 피해를 주고 {밀감의 저주}를 1 부여합니다.,E(A>A*0.9)/E(M>tangerine_curse*1),void,
 ~annoying_tangerine,방해 밀감이,-1,IT,[휘발성] 사용 불가.,[V],@,
