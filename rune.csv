@@ -66,4 +66,5 @@ promiscuous_mode,Promiscuous Mode,-1,내 턴이 시작할 때 에너지를 1 얻
 zeroday_threat,Zero-Day Threat,-1,내 턴이 끝날 때 {공격력}과 {방어력}이 40% 증가합니다.,[E]S(M>attack*Ax0.4)/S(M>defense*Bx0.4),0
 land_attack,LAN Denial Attack,-1,라운드가 시작할 때 적의 어빌리티 북에 <트래픽>을 10개와 <핑> 3개를 넣습니다.,[T]E(K>~traffic*10)/E(K>~ping*3),0
 arp_spoofing,ARP Spoofing,-1,내 턴이 끝날 때 (1.5 공격력)의 피해를 주고 {혼미}를 1 부여합니다.,[E]E(A>A*1.5)/E(M>confusion*1),0
-system_panelty,시스템 패널티,-1,전용 어빌리티의 효과가 매우 강력한 대신 턴 시작 시 드로우 개수가 1 감소합니다.,!,0
+system_panelty,감블러: 시스템 패널티,-1,전용 어빌리티의 효과가 매우 강력한 대신 턴 시작 시 드로우 개수가 1 감소합니다.,!,0
+system_cosplay,쫀득: 코스프레,-1,제시되는 어빌리티에 다른 여성 스트리머 캐릭터들의 어빌리티가 추가됩니다. 상점에서 다른 상품을 보기 위한 비용이 3을 초과하지 않습니다.,!,0
