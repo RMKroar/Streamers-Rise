@@ -1,0 +1,80 @@
+attack,공격력,normal,캐릭터의 공격력입니다.,
+defense,방어력,normal,캐릭터의 방어력입니다.,
+conserve_def,방어 보존,dec_start,턴의 시작에 방어가 사라지지 않습니다.,[S]!
+less_draw,드로우 감소,del_draw,중첩된 만큼 드로우할 수 없습니다.,!
+more_draw,드로우 증가,del_draw,중첩된 만큼 더 많이 드로우합니다.,!
+increase_attack,공격력 증가,del_end,턴이 끝날 때 공격력 증가 중첩만큼 {공격력}이 증가합니다.,[E]S(M>attack*W)
+reduce_attack,공격력 감소,del_end,턴이 끝날 때 공격력 감소 중첩만큼 {공격력}이 감소합니다.,[E]S(M>attack*-W)
+increase_defense,방어력 증가,del_end,턴이 끝날 때 방어력 증가 중첩만큼 {방어력}이 증가합니다.,[E]S(M>defense*W)
+more_energy,추가 에너지,del_start,턴이 시작할 때 추가 에너지 중첩만큼 에너지를 얻습니다.,[S]S(E>W)
+less_energy,에너지 손실,del_start,턴이 시작할 때 에너지 손실 중첩만큼 에너지를 잃습니다.,[S]S(E>-W)
+detect,감지,dec_dam,받는 피해량이 감지 중첩 당 10% 증가합니다.,[B]Y(1+W*0.1)
+poison,중독,dec_end,턴이 끝날 때 중독 중첩만큼 체력을 잃습니다.,[E]S(H>-W)
+bleed,출혈,dec_end,턴이 끝날 때 출혈 중첩만큼 체력을 잃습니다.,[E]S(H>-W)
+spice,매운 맛,realtime,매운 맛 중첩이 5 이상이 되면 {공격력}이 60% 증가하고 페이지에 <노란 딱지>를 추가합니다. 그 후 모든 중첩을 제거합니다.,I(W>4)/S(M>attack*Ax0.6)/S(P>~yellow_card*1)/N(%)
+confusion,혼미,dec_end,어빌리티를 사용할 때마다 최대 체력의 3%를 잃습니다.,[U]S(H>-H*0.03)
+counter,반격,dec_dam,피해를 받을 때마다 적이 최대 체력의 3%를 잃습니다.,[B]E(H>-h*0.03)
+restoration,재생,dec_end,턴이 끝날 때 재생 중첩 당 최대 체력의 1%를 회복합니다.,[E]S(H>H*0.01*W)
+barrier,방어막,dec_end,턴이 끝날 때 방어막 중첩 당 최대 체력의 1%만큼 방어를 얻습니다.,[E]S(B>H*0.01*W)
+cube_attack,잠재능력: 공격력,del_start,턴이 시작할 때 잠재능력 중첩만큼 공격력을 얻습니다.,[S]S(M>attack*W)
+cube_defense,잠재능력: 방어력,del_start,턴이 시작할 때 잠재능력 중첩만큼 방어력을 얻습니다.,[S]S(M>defense*W)
+cube_energy,잠재능력: 에너지,del_start,턴이 시작할 때 잠재능력 중첩만큼 에너지를 얻습니다.,[S]S(E>W)
+cube_draw,잠재능력: 드로우,del_start,턴이 시작할 때 잠재능력 중첩만큼 어빌리티를 드로우합니다.,[S]S(D>W)
+phantasma_coin,판타즈마 코인,normal,턴이 시작할 때 판타즈마 코인 중첩이 5개 쌓였다면 <메이플: 아케인셰이드>를 어빌리티 페이지에 추가합니다.,[S]I(W>4)/S(P>~jinu_arcaneshade*1)/N(%)
+tetris_combo,테트리스 콤보,del_end,턴이 끝날 때 중첩이 모두 사라집니다.,
+mask,가면,dec_dam,받는 피해량이 0이 됩니다.,[B]Y(0)
+bangtype_powerful,파워풀 타입,del_end,턴이 끝날 때 파워풀 타입 중첩의 제곱만큼 {종합력}을 얻습니다.,[E]S(M>bangscore*WxW)
+bangtype_cool,쿨 타입,del_end,턴이 끝날 때 쿨 타입 중첩의 제곱만큼 {종합력}을 얻습니다.,[E]S(M>bangscore*WxW)
+bangtype_happy,해피 타입,del_end,턴이 끝날 때 해피 타입 중첩의 제곱만큼 {종합력}을 얻습니다.,[E]S(M>bangscore*WxW)
+bangtype_pure,퓨어 타입,del_end,턴이 끝날 때 퓨어 타입 중첩의 제곱만큼 {종합력}을 얻습니다.,[E]S(M>bangscore*WxW)
+bangscore,종합력,del_start,턴이 시작할 때 종합력 X (0.1 공격력)의 피해를 주고 종합력 X (0.1 방어력)의 방어를 얻습니다. 중첩이 10 이상이면 에너지를 1 얻습니다.,[S]E(A>A*0.1*W)/S(B>B*0.1*W)/I(W>9)/S(E>1)
+pen_charge,뗑컨 돌격,del_end,어빌리티를 사용할 때마다 적의 어빌리티 북에 <뗑컨>을 넣습니다.,[U]E(K>~penguin*1)
+dodge,회피,dec_dam,받는 피해량이 0이 됩니다.,[B]Y(0)
+sentiment,감성,dec_dam,받는 피해량이 절반이 됩니다.,[B]Y(0.5)
+tangerine,밀감,del_end,공격성 어빌리티를 사용할 때마다 적이 가진 상태이상의 수 X (0.3 공격력)의 피해를 줍니다.,[U|AT]!
+tangerine_curse,밀감의 저주,dec_end,어빌리티를 사용할 때마다 내 어빌리티 북에 <방해 밀감이>를 넣습니다.,[U]S(K>~annoying_tangerine*1)
+taunt,도발,dec_dam,받는 피해량이 30% 증가합니다.,[B]Y(1.3)
+stuffy,답답,dec_end,공격성 어빌리티를 사용할 때마다 에너지를 1 잃습니다.,[U|AT]S(E>-1)
+blind,실명,dec_end,어빌리티를 사용할 때마다 페이지의 무작위 어빌리티를 버립니다.,[U]R(P>$)/T($>PN)
+sorrow,서러움,dec_dam,받는 피해량이 80% 감소합니다.,[B]Y(0.2)
+electric_shock,감전,dec_dam,피해를 받을 때마다 감전 중첩 하나 당 최대 체력의 1%를 추가로 잃습니다.,[B]S(H>-H*0.01*W)
+shyness,부끄러움,dec_dam,받는 피해량이 25% 증가합니다.,[B]Y(1.25)
+stored_health,저장 체력,normal,저장된 체력입니다. 다양한 방식으로 운용이 가능합니다.,
+corruption,타락,del_start,내 턴의 시작에 타락 중첩만큼 체력을 잃습니다.,[S]S(H>-W)
+bind,구속,normal,악녀에 의해 구속되고 있습니다.,
+chap,찹쌀이,del_start,받는 피해량이 중첩 당 10% 증가합니다. 내 턴이 시작할 때 찹쌀이 중첩 X (0.01 최대 체력)만큼 체력을 잃습니다.,[B]Y(1+W*0.1)[S]S(H>-W*0.01*H)
+luck,행운,dec_start,피해를 받을 때마다 30% 확률로 그 피해량을 0으로 만듭니다.,[B]Y(!)
+burn,화상,dec_end,턴이 끝날 때 최대 체력의 5%를 잃습니다.,[E]S(H>-H*0.05)
+shock_mitigation,충격 완화,dec_dam,받는 피해량이 절반이 됩니다.,[B]Y(0.5)
+exhaust,탈진,normal,방송이 너무 오래 지속되어 탈진이 찾아왔습니다. 턴이 끝날 때 탈진 중첩 하나 당 최대 체력의 10%를 잃습니다.,[E]S(H>-H*0.1*W)
+taran,타란~,del_end,어빌리티를 사용할 때마다 (0.7 공격력)의 피해를 줍니다.,[U]E(A>A*0.7)
+azikun,아지쿤 게이지,del_end,{트최탱 게이지} 중첩보다 중첩된 수가 같거나 많으면 아지쿤 게이지 중첩 하나 당 공격력의 10%가 증가합니다.,!
+tanker,트최탱 게이지,del_end,{아지쿤 게이지} 중첩보다 중첩된 수가 같거나 많으면 트최탱 게이지 중첩 하나 당 방어력의 10%가 증가합니다.,!
+ult_charge,궁극기 충전,normal,궁극기 충전 중첩이 5 이상인 상태에서 영웅을 변경할 경우 해당 영웅의 궁극기를 추가로 얻습니다.,
+zarya_shield,방벽 전개,del_start,받은 피해량만큼 중첩을 얻습니다. 내 턴이 시작할 때 방어가 사라지지 않고 방벽 전개 중첩의 절반만큼 추가 방어를 얻습니다.,[S]S(B>W*0.5)[B]!
+formation_destroy,진형 붕괴,dec_end,받는 피해량이 진형 붕괴 중첩 당 30% 증가합니다.,[B]Y(1+W*0.3)
+deadeye,황야의 무법자,del_end,내 턴이 끝날 때 황야의 무법자 중첩만큼 피해를 받습니다.,[E]S(A>W)
+healban,힐밴,del_end,회복 효과를 받을 수 없습니다.,!
+nanoboost,나노 강화제,del_start,받는 피해량이 30% 감소합니다.,[B]Y(0.7)
+harmony,조화,dec_end,내 턴이 끝날 때 최대 체력의 5%를 회복합니다.,[E]S(H>H*0.05)
+discord,부조화,dec_end,받는 피해량이 부조화 중첩 당 20% 증가합니다.,[B]Y(1+W*0.2)
+transcend,초월,dec_dam,받는 피해량이 0이 됩니다. 또한 방어를 무시하고 들어오는 피해에도 면역이 됩니다.,[B]Y(0)
+ggamxx,x_x,del_end,공격성 어빌리티를 사용할 때마다 내 어빌리티 북에 <붕어>를 넣습니다.,[U|AT]S(K>~gambler_carp*1)
+metaphor,비유ㅇ신,del_end,유틸성 어빌리티를 사용할 때마다 내 어빌리티 북에 <붕어>를 넣습니다.,[U|UT]S(K>~gambler_carp*1)
+poison_mist,독성 구름,normal,내 턴이 시작할 때 독성 구름 중첩 수치만큼 {중독}을 얻습니다.,[S]S(M>poison*W)
+critical_damage,치명상,normal,내 턴이 시작할 때 치명상 중첩 수치만큼 {출혈}을 얻습니다.,[S]S(M>bleed*W)
+return_effective,역행 유효성,del_start,트레이서가 지금의 시각을 기억합니다. 내 턴이 시작할 때 {역행 제한}을 얻습니다.,[S]S(M>return_restraint*1)
+return_restraint,역행 제한,del_end,내 턴이 끝날 때 페이지에 있는 <시간 역행>이 소멸합니다.,[E]R(P>$|~gambler_recall)/Q($)
+song_redline,선곡: 홍연,del_end,내가 체력을 회복할 때마다 적에게 (0.7 공격력)의 피해를 줍니다.,[H]E(A>A*0.7)
+song_idol,선곡: 아이돌 선언!,del_end,내가 체력을 회복할 때마다 {공격력}과 {방어력}이 10% 증가합니다.,[H]S(M>attack*Ax0.1)/S(M>defense*Bx0.1)
+song_suicide,선곡: 자상무색,del_end,내가 체력을 회복할 때마다 적의 어빌리티 북에 <자상무색>을 넣습니다.,[H]E(K>~cherrypach_suicide*1)
+song_boyfriend,선곡: 애인을 내려주세요,del_end,회복량이 2배가 됩니다.,[H]!
+song_alien,선곡: 에일리언,del_end,내가 체력을 회복할 때마다 적은 최대 체력의 5%를 잃습니다.,[H]E(H>-h*0.05)
+song_horang,선곡: 호랑수월가,del_end,내가 체력을 회복할 때마다 적에게 (0.4 공격력)의 피해를 주고 어빌리티를 드로우합니다.,[H]E(A>A*0.4)/S(D>1)
+temp_health,선곡: 마음짓기,del_start,내 턴이 시작할 때 마음짓기 중첩만큼 체력을 회복합니다.,[S]S(H>W)
+song_hide,선곡: 숨바꼭질,del_end,내가 체력을 회복할 때마다 {얀데레}를 2 얻습니다.,[H]S(M>yan*2)
+yan,얀데레,realtime,얀데레 중첩이 10 이상이 되면 얀핀 상태에 돌입합니다: 노래 어빌리티가 전부 <노래의 흔적>으로 변화하고 얀핀 어빌리티가 강화됩니다.,I(W>9)/S(M>yanpin*1)/!
+yanpin,얀핀,normal,체력이 모두 소진되면 북/페이지/스토리지의 모든 <노래의 흔적>을 소멸시키고 개수 당 최대 체력의 10%를 회복하며 부활합니다.,!
+hemor,특수 출혈,normal,피해를 받을 때마다 특수 출혈 중첩만큼 체력을 잃습니다.,[B]S(H>-W)
+deadeye,죽은 눈,del_end,공격성 어빌리티를 사용할 때마다 적에게 {출혈}을 (0.2 공격력)만큼 부여하고 {얀데레}를 1 얻습니다.,[U|AT]E(M>bleed*Ax0.2)/S(M>yan*1)
+madeye,광기 서린 눈동자,공격성 어빌리티를 사용할 때마다 적에게 {특수 출혈}을 (0.1 공격력)만큼 부여하고 어빌리티를 드로우합니다.,[U|AT]E(M>hemor*Ax0.1)/S(D>1)
