@@ -392,44 +392,48 @@ ai_strangerumor,이상한 뇌피셜,1,UT,N,(0.9 방어력)의 방어를 얻습�
 ai_fpsshot,저격 FPS: 조준 사격,1,AT,N,(0.9 공격력)의 피해를 줍니다. {감지}를 2 부여합니다.,E(A>A*0.9)/E(M>detect*2),gun
 ai_fpscheat,저격 FPS: 방플,1,UT,N,어빌리티를 2개 드로우합니다. {감지}를 4 부여합니다.,S(D>2)/E(M>detect*4),@
 ai_fpsgrenade,저격 FPS: 이상한 수류탄,1,AT,F,(0.9 공격력)의 피해를 줍니다. 적은 다음 턴 회복 효과를 받을 수 없습니다.,E(A>A*0.9)/E(M>healban*1),explosion
-ai_camouflage,사칭,0,UT,F,[일회성] 플레이어 캐릭터의 어빌리티를 사칭합니다.,[O]!,@
-~ai_ji_mask,가면 복제품,1,AT,N,(0.9 공격력)의 피해를 줍니다. {초월}을 1 얻습니다.,E(A>A*0.9)/S(M>transcend*1),hitFire
-~ai_ji_cube,레드 큐브,1,UT,F,다음 턴에 {공격력}과 {방어력}을 30% 얻고 에너지를 1 회복합니다. 어빌리티를 2개 드로우합니다.,S(D>2)/S(M>cube_attack*Ax0.3)/S(M>cube_defense*Bx0.3)/S(M>cube_energy*1),@
-~ai_ji_drone,레식 드론,1,AT,N,(0.6 공격력)의 피해를 주고 동일한 양의 방어를 얻습니다. {감지}를 3 부여합니다.,E(A>A*0.6)/S(B>A*0.6)/E(detect*3),gun
-~ai_ji_tetris,테트리스 방벽,0,UT,F,[일회성] (1.0 방어력)의 방어를 얻습니다. 어빌리티를 드로우합니다.,[O]S(B>B)/S(D>1),@
-~ai_co_rainbow,뱅드림 무지개봉,1,AT,N,(0.9 공격력)의 피해를 줍니다. {종합력}을 5 얻습니다.,E(A>A*0.9)/S(M>bangscore*5),hit
-~ai_co_madpenguin,화난 뗑컨,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <뗑컨>을 2개 넣습니다.,E(A>A*0.9)/E(K>~penguin*2),hitFire
-~ai_co_politic,정치학개론,0,UT,F,(0.5 방어력)의 방어를 얻습니다. 적에게 같은 수치의 {스트레스}를 부여합니다. 어빌리티를 드로우합니다.,S(D>1)/S(B>B*0.5)/E(M>stress*Bx0.5),@
-~ai_co_hersey,코렛트의 게임 실력...?,0,UT,F,[일회성] 어빌리티를 2개 드로우합니다.,[O]S(D>2),@
-~ai_ru_hotdrip,화끈한 드립,1,AT,N,(1.4 공격력)의 피해를 줍니다. 어빌리티 페이지에 <노란 딱지>를 추가합니다.,E(A>A*1.4)/S(P>~yellow_card*1),hitFire
-~ai_ru_nineteen,연령 제한 영상,1,UT,F,[일회성] {공격력}이 2배가 됩니다.,[O]S(M>attack*A),@
-~ai_ru_sexual,룬레이의 정념,0,AT,N,(0.7 공격력)의 피해를 줍니다. 페이지에 있는 모든 방해성 어빌리티를 소멸시킵니다.,E(A>A*0.7)/R(P>@|IT)/Q(@),hit
-~ai_ru_yellow,광란의 노란 딱지,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 있는 무작위 어빌리티가 <노란 딱지>로 변화합니다.,S(A>A*0.9)/R(k>$)/Z($>~yellow_card),hitFire
-~ai_ad_bear,곰구리 복제품,1,CT,C,내 턴이 끝날 때 (0.4 공격력)의 피해를 주고 동일한 양의 방어를 제공합니다..,[E]E(A>A*0.4)/S(B>A*0.4),claw
-~ai_ad_roar,곰구리의 포효,2,AT,F,[일회성] (1.5 공격력)의 피해를 줍니다. 적의 {공격력}과 {방어력}이 30% 감소합니다.,	[O]E(A>A*1.5)/E(M>attack*-ax0.3)/E(M>defense*-bx0.3),roar
-~ai_ad_claw,곰구리의 강력한 발톱,1,AT,N,(0.8 공격력)의 피해를 줍니다. {치명상}을 (0.2 공격력)만큼 부여합니다.,E(A>A*0.8)/E(M>critical_damage*Ax0.2),claw
-~ai_ad_snack,곰구리의 작은 간식,0,UT,F,[일회성] 최대 체력의 10%를 회복합니다. 어빌리티를 드로우합니다.,[O]S(D>1)/S(H>H*0.1),@
-~ai_ta_bomb,보급형 밀감 폭탄,1,AT,N,(0.8 공격력)의 피해를 주고 {독성 구름}을 적 최대 체력의 5%만큼 부여합니다.,E(A>A*0.8)/E(M>poison_mist*hx0.05),explosion
-~ai_ta_whip,홋치홋치,1,AT,N,(0.8 공격력)의 피해를 주고 {치명상}을 (0.3 공격력)만큼 부여합니다. 어빌리티를 드로우합니다.,S(D>1)/E(A>A*0.8)/E(M>critical_damage*Ax0.3),hitFire
-~ai_ta_jmt,어금니 갈아버리기,1,UT,N,(0.7 방어력)의 방어를 얻고 {답답}과 {실명}을 부여합니다. 어빌리티를 드로우합니다.,S(B>B*0.7)/E(M>stuffy*1)/E(M>blind*1),@
-~ai_ta_pika,렛츠고 피카츄!,0,UT,F,[일회성] 적에게 {감전}을 8 부여합니다.,[O]E(M>electric_shock*8),@
-~ai_ba_fist,핵주먹 펀치!,1,AT,N,최대 체력의 5%를 소비하여 저장합니다. (1.2 공격력)의 피해를 줍니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*1.2),hitFire
-~ai_ba_guard,악녀의 든든한 가드,1,UT,N,(0.8 방어력)의 방어를 얻습니다. {저장 체력}이 최대 체력의 10%보다 많다면 추가로 (0.5 방어력)의 방어를 얻습니다.,S(B>B*0.8)/X(stored_health)/I(X>H*0.1)/S(B>B*0.5),@
-~ai_ba_voice,달콤한 목소리를 찾아서,1,UT,F,{저장 체력} 수치만큼 체력을 회복합니다.,X(stored_health)/S(H>X),@
-~ai_ba_shout,호탕한 괴성,2,AT,N,최대 체력의 5%를 소비하여 저장합니다. (1.7 공격력)의 피해를 주고 적의 어빌리티 북에 <청각 손실>을 넣습니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*1.7)/E(K>~being_deaf*1),roar
-~ai_ch_chap,찹쌀이 등장!,1,AT,N,(0.9 공격력)의 피해를 줍니다. 무작위 찹쌀이 토큰을 어빌리티 북에 3개 넣습니다.,E(A>A*0.9)/S(K>^mochi*1)/S(K>^mochi*1)/S(K>^mochi*1),hit
-~ai_ch_taran,찹쌀이 축제,0,UT,F,이번 턴 동안 어빌리티를 사용할 때마다 적에게 (0.7 공격력)의 피해를 줍니다.,S(M>taran*1),@
-~ai_ch_intelligent,지성의 퍼즐게임,0,UT,N,[일회성] 어빌리티를 3개 드로우합니다.,[O]S(D>3),@
-~ai_ch_chapcrown,찹쌀이의 작은 왕관,0,UT,N,(0.8 방어력)의 방어를 얻습니다. 무작위 찹쌀이 토큰을 어빌리티 북에 2개 넣습니다.,S(B>B*0.8)/S(K>^mochi*1)/S(K>^mochi*1),@
-~ai_az_thunderfirst,번개의 호흡,0,UT,F,이번 턴동안 {공격력}이 50% 증가합니다. 어빌리티를 드로우합니다.,S(M>reduce_attack*Ax0.5)/S(M>attack*Ax0.5)/S(D>1),@
-~ai_az_roar,파괴적인 사자후,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <청각 손실>을 넣습니다. 내 {공격력}이 15% 증가합니다.,E(A>A*0.9)/E(K>~being_deaf*1)/E(M>attack*Ax0.15),roar
-~ai_az_helmet,보급형 헬멧,1,UT,N,(0.6 방어력)의 방어를 얻습니다. {충격 완화}를 2 얻고 {방어력}이 15% 증가합니다.,S(B>B*0.6)/S(M>shock_mitigation*2)/S(M>defense*Bx0.15),@
-~ai_az_hottuck,환상적인 호떡,0,UT,F,[일회성] 에너지를 1 회복합니다. 어빌리티를 2개 드로우합니다.,[O]S(E>1)/S(D>2),@
-~ai_ga_healpack,보급형 힐팩,1,UT,N,(0.7 방어력)의 방어를 얻습니다. 최대 체력의 7%를 회복합니다.,S(B>B*0.7)/S(H>H*0.07),@
-~ai_ga_macree,맥크리: 황야의 무법자,1,UT,F,적은 다음 턴의 종료에 (1.8 공격력)만큼 피해를 받습니다.,E(M>deadeye*Ax1.8),@
-~ai_ga_carp,붕어는 붕어야,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <붕어>를 2개 넣습니다.,E(A>A*0.9)/E(K>~gambler_carp*2),void
-~ai_ga_care,메르시: 카두세우스 광선,0,UT,N,[일회성] {공격력}이 35% 증가합니다. 최대 체력의 15%를 회복합니다.,[O]S(M>attack*Ax0.35)/S(H>H*0.15),@
-~ai_che_coversong,♬새로운 커버곡,1,UT,N,(0.8 방어력)만큼 체력을 회복합니다. 동일한 수치만큼 적이 체력을 잃습니다.,S(H>B*0.8)/E(H>-B*0.8),@
-~ai_che_duetsong,♬멋진 듀엣곡,1,UT,P,(0.9 방어력)만큼 체력을 회복합니다. 어빌리티를 2개 드로우합니다.,S(H>B*0.9)/S(D>2),@
-~ai_che_toolbox,얀데레: 고문 상자,1,AT,N,(0.8 공격력)의 피해를 줍니다. {특수 출혈}과 {치명상}을 (0.15 공격력)만큼 부여합니다.,E(A>A*0.8)/E(M>hemor*Ax0.15)/E(M>critical_damage*Ax0.15),thrust
-~ai_che_scythe,얀데레: 양날 단검,1,AT,N,(0.6 공격력)의 피해를 줍니다. {특수 출혈}을 (0.3 공격력)만큼 부여합니다.,E(A>A*0.6)/E(M>hemor*Ax0.3),slash
+ai_camouflage,미스리프레젠트,0,UT,F,[일회성] 플레이어 캐릭터의 어빌리티를 사칭합니다.,[O]!,@
+~ai_jinu_mask,가면 복제품,1,AT,N,(0.9 공격력)의 피해를 줍니다. {초월}을 1 얻습니다.,E(A>A*0.9)/S(M>transcend*1),hitFire
+~ai_jinu_cube,레드 큐브,1,UT,F,다음 턴에 {공격력}과 {방어력}을 30% 얻고 에너지를 1 회복합니다. 어빌리티를 2개 드로우합니다.,S(D>2)/S(M>cube_attack*Ax0.3)/S(M>cube_defense*Bx0.3)/S(M>cube_energy*1),@
+~ai_jinu_drone,레식 드론,1,AT,N,(0.6 공격력)의 피해를 주고 동일한 양의 방어를 얻습니다. {감지}를 3 부여합니다.,E(A>A*0.6)/S(B>A*0.6)/E(detect*3),gun
+~ai_jinu_tetris,테트리스 방벽,0,UT,F,[일회성] (1.0 방어력)의 방어를 얻습니다. 어빌리티를 드로우합니다.,[O]S(B>B)/S(D>1),@
+~ai_collet_rainbow,뱅드림 무지개봉,1,AT,N,(0.9 공격력)의 피해를 줍니다. {종합력}을 5 얻습니다.,E(A>A*0.9)/S(M>bangscore*5),hit
+~ai_collet_madpenguin,화난 뗑컨,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <뗑컨>을 2개 넣습니다.,E(A>A*0.9)/E(K>~penguin*2),hitFire
+~ai_collet_politic,정치학개론,0,UT,F,(0.5 방어력)의 방어를 얻습니다. 적에게 같은 수치의 {스트레스}를 부여합니다. 어빌리티를 드로우합니다.,S(D>1)/S(B>B*0.5)/E(M>stress*Bx0.5),@
+~ai_collet_hersey,코렛트의 게임 실력...?,0,UT,F,[일회성] 어빌리티를 2개 드로우합니다.,[O]S(D>2),@
+~ai_luneray_hotdrip,화끈한 드립,1,AT,N,(1.4 공격력)의 피해를 줍니다. 어빌리티 페이지에 <노란 딱지>를 추가합니다.,E(A>A*1.4)/S(P>~yellow_card*1),hitFire
+~ai_luneray_nineteen,연령 제한 영상,1,UT,F,[일회성] {공격력}이 2배가 됩니다.,[O]S(M>attack*A),@
+~ai_luneray_sexual,룬레이의 정념,0,AT,N,(0.7 공격력)의 피해를 줍니다. 페이지에 있는 모든 방해성 어빌리티를 소멸시킵니다.,E(A>A*0.7)/R(P>@|IT)/Q(@),hit
+~ai_luneray_yellow,광란의 노란 딱지,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 있는 무작위 어빌리티가 <노란 딱지>로 변화합니다.,S(A>A*0.9)/R(k>$)/Z($>~yellow_card),hitFire
+~ai_aduck_bear,곰구리 복제품,1,CT,C,내 턴이 끝날 때 (0.4 공격력)의 피해를 주고 동일한 양의 방어를 제공합니다..,[E]E(A>A*0.4)/S(B>A*0.4),claw
+~ai_aduck_roar,곰구리의 포효,2,AT,F,[일회성] (1.5 공격력)의 피해를 줍니다. 적의 {공격력}과 {방어력}이 30% 감소합니다.,	[O]E(A>A*1.5)/E(M>attack*-ax0.3)/E(M>defense*-bx0.3),roar
+~ai_aduck_claw,곰구리의 강력한 발톱,1,AT,N,(0.8 공격력)의 피해를 줍니다. {치명상}을 (0.2 공격력)만큼 부여합니다.,E(A>A*0.8)/E(M>critical_damage*Ax0.2),claw
+~ai_aduck_snack,곰구리의 작은 간식,0,UT,F,[일회성] 최대 체력의 10%를 회복합니다. 어빌리티를 드로우합니다.,[O]S(D>1)/S(H>H*0.1),@
+~ai_taem_bomb,보급형 밀감 폭탄,1,AT,N,(0.8 공격력)의 피해를 주고 {독성 구름}을 적 최대 체력의 5%만큼 부여합니다.,E(A>A*0.8)/E(M>poison_mist*hx0.05),explosion
+~ai_taem_whip,홋치홋치,1,AT,N,(0.8 공격력)의 피해를 주고 {치명상}을 (0.3 공격력)만큼 부여합니다. 어빌리티를 드로우합니다.,S(D>1)/E(A>A*0.8)/E(M>critical_damage*Ax0.3),hitFire
+~ai_taem_jmt,어금니 갈아버리기,1,UT,N,(0.7 방어력)의 방어를 얻고 {답답}과 {실명}을 부여합니다. 어빌리티를 드로우합니다.,S(B>B*0.7)/E(M>stuffy*1)/E(M>blind*1),@
+~ai_taem_pika,렛츠고 피카츄!,0,UT,F,[일회성] 적에게 {감전}을 8 부여합니다.,[O]E(M>electric_shock*8),@
+~ai_badgirl_fist,핵주먹 펀치!,1,AT,N,최대 체력의 5%를 소비하여 저장합니다. (1.2 공격력)의 피해를 줍니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*1.2),hitFire
+~ai_badgirl_guard,악녀의 든든한 가드,1,UT,N,(0.8 방어력)의 방어를 얻습니다. {저장 체력}이 최대 체력의 10%보다 많다면 추가로 (0.5 방어력)의 방어를 얻습니다.,S(B>B*0.8)/X(stored_health)/I(X>H*0.1)/S(B>B*0.5),@
+~ai_badgirl_voice,달콤한 목소리를 찾아서,1,UT,F,{저장 체력} 수치만큼 체력을 회복합니다.,X(stored_health)/S(H>X),@
+~ai_badgirl_shout,호탕한 괴성,2,AT,N,최대 체력의 5%를 소비하여 저장합니다. (1.7 공격력)의 피해를 주고 적의 어빌리티 북에 <청각 손실>을 넣습니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*1.7)/E(K>~being_deaf*1),roar
+~ai_chap_chap,찹쌀이 등장!,1,AT,N,(0.9 공격력)의 피해를 줍니다. 무작위 찹쌀이 토큰을 어빌리티 북에 3개 넣습니다.,E(A>A*0.9)/S(K>^mochi*1)/S(K>^mochi*1)/S(K>^mochi*1),hit
+~ai_chap_taran,찹쌀이 축제,0,UT,F,이번 턴 동안 어빌리티를 사용할 때마다 적에게 (0.7 공격력)의 피해를 줍니다.,S(M>taran*1),@
+~ai_chap_intelligent,퍼즐 게임,0,UT,N,[일회성] 어빌리티를 3개 드로우합니다.,[O]S(D>3),@
+~ai_chap_chapcrown,찹쌀이의 작은 왕관,0,UT,N,(0.8 방어력)의 방어를 얻습니다. 무작위 찹쌀이 토큰을 어빌리티 북에 2개 넣습니다.,S(B>B*0.8)/S(K>^mochi*1)/S(K>^mochi*1),@
+~ai_azi_thunderfirst,번개의 호흡,0,UT,F,이번 턴동안 {공격력}이 50% 증가합니다. 어빌리티를 드로우합니다.,S(M>reduce_attack*Ax0.5)/S(M>attack*Ax0.5)/S(D>1),@
+~ai_azi_roar,파괴적인 비명,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <청각 손실>을 넣습니다. 내 {공격력}이 15% 증가합니다.,E(A>A*0.9)/E(K>~being_deaf*1)/E(M>attack*Ax0.15),roar
+~ai_azi_helmet,보급형 헬멧,1,UT,N,(0.6 방어력)의 방어를 얻습니다. {충격 완화}를 2 얻고 {방어력}이 15% 증가합니다.,S(B>B*0.6)/S(M>shock_mitigation*2)/S(M>defense*Bx0.15),@
+~ai_azi_hottuck,환상적인 호떡,0,UT,F,[일회성] 에너지를 1 회복합니다. 어빌리티를 2개 드로우합니다.,[O]S(E>1)/S(D>2),@
+~ai_gambler_healpack,보급형 힐팩,1,UT,N,(0.7 방어력)의 방어를 얻습니다. 최대 체력의 7%를 회복합니다.,S(B>B*0.7)/S(H>H*0.07),@
+~ai_gambler_macree,맥크리: 황야의 무법자,1,UT,F,적은 다음 턴의 종료에 (1.8 공격력)만큼 피해를 받습니다.,E(M>deadeye*Ax1.8),@
+~ai_gambler_carp,붕어는 붕어야,1,AT,N,(0.9 공격력)의 피해를 줍니다. 적의 어빌리티 북에 <붕어>를 2개 넣습니다.,E(A>A*0.9)/E(K>~gambler_carp*2),void
+~ai_gambler_care,메르시: 카두세우스 광선,0,UT,N,[일회성] {공격력}이 35% 증가합니다. 최대 체력의 15%를 회복합니다.,[O]S(M>attack*Ax0.35)/S(H>H*0.15),@
+~ai_cherrypach_coversong,♬새로운 커버곡,1,UT,N,(0.8 방어력)만큼 체력을 회복합니다. 동일한 수치만큼 적이 체력을 잃습니다.,S(H>B*0.8)/E(H>-B*0.8),@
+~ai_cherrypach_duetsong,♬멋진 듀엣곡,1,UT,P,(0.9 방어력)만큼 체력을 회복합니다. 어빌리티를 2개 드로우합니다.,S(H>B*0.9)/S(D>2),@
+~ai_cherrypach_toolbox,얀데레: 고문 상자,1,AT,N,(0.8 공격력)의 피해를 줍니다. {특수 출혈}과 {치명상}을 (0.15 공격력)만큼 부여합니다.,E(A>A*0.8)/E(M>hemor*Ax0.15)/E(M>critical_damage*Ax0.15),thrust
+~ai_cherrypach_scythe,얀데레: 양날 단검,1,AT,N,(0.6 공격력)의 피해를 줍니다. {특수 출혈}을 (0.3 공격력)만큼 부여합니다.,E(A>A*0.6)/E(M>hemor*Ax0.3),slash
+~ai_zzon_contentplan,컨텐츠 계획,0,UT,F,[일회성] {공격력}과 {방어력}을 10% 얻습니다. 어빌리티를 드로우합니다.,[O]S(M>attack*Ax0.1)/S(M>defense*Bx0.1)/S(D>1),@
+~ai_zzon_newguest,새로운 게스트,1,UT,N,(0.7 방어력)의 방어를 얻습니다. <컨텐츠 계획>을 페이지에 추가합니다.,S(B>B*0.7)/S(P>~ai_zzon_contentplan*1),@
+~ai_zzon_shitfaker,똥겜 페이커,1,AT,N,(0.7 공격력)의 피해를 줍니다. <컨텐츠 계획>을 페이지에 추가합니다.,E(A>A*0.7)/S(P>~ai_zzon_contentplan*1),void
+~ai_zzon_cosplay,코스프레,0,UT,F,[일회성] 여스트리머의 어빌리티를 무작위로 페이지에 추가합니다.,[O]!,@
