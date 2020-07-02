@@ -23,8 +23,8 @@ wind,룬: 원소 돌풍,1,유틸성 어빌리티를 5회 사용할 때마다 어
 earth,룬: 원소 암석,1,유틸성 어빌리티를 5회 사용할 때마다 (1.0 방어력)의 방어를 얻습니다.,[U|UT]W(1)/I(W>4)/W(R)/S(B>B*1),4
 water,룬: 원소 물방울,1,유틸성 어빌리티를 10회 사용할 때마다 에너지를 1 얻습니다.,[U|UT]W(1)/I(W>9)/W(R)/S(E>1),9
 libra,룬: 천칭자리 문양,1,이 룬을 얻는 즉시 어빌리티 북의 원하는 유틸성 어빌리티에 [서장]을 부여합니다.,[G],0
-fire,룬: 원소 화염,2,한 턴에 유틸성 어빌리티를 3회 사용할 때마다 {공격력}을 30% 얻습니다.,[U|UT]W(1)/I(W>2)/W(R)/S(M>attack*Ax0.3)[E]W(R),2
-ice,룬: 원소 빙하,2,한 턴에 유틸성 어빌리티를 3회 사용할 때마다 적의 어빌리티 북에 <얼음 조각>을 넣습니다.,[U|UT]W(1)/I(W>2)/W(R)/E(K>~ice_piece*1)[E]W(R),2
+fire,룬: 원소 화염,2,한 턴에 유틸성 어빌리티를 4회 사용할 때마다 {공격력}을 25% 얻습니다.,[U|UT]W(1)/I(W>3)/W(R)/S(M>attack*Ax0.25)[E]W(R),3
+ice,룬: 원소 빙하,2,한 턴에 유틸성 어빌리티를 4회 사용할 때마다 적의 어빌리티 북에 <얼음 조각>을 넣습니다.,[U|UT]W(1)/I(W>3)/W(R)/E(K>~ice_piece*1)[E]W(R),3
 icarus_shoes,룬: 날개 장화,2,지속성 어빌리티를 사용할 때마다 {초월}을 1 얻습니다.,[U|CT]S(M>transcend*1),0
 shooting_star,룬: 슈팅 스타,2,지속성 어빌리티를 사용할 때마다 에너지를 1 얻습니다.,[U|CT]S(E>1),0
 capricon,룬: 염소자리 문양,1,이 룬을 얻는 즉시 어빌리티 북의 원하는 지속성 어빌리티에 [서장]을 부여합니다.,[G],0
@@ -63,8 +63,8 @@ vulnerability_scan,Vulnerability Scan,-1,내 턴이 끝날 때 {공격력}과 {�
 http_flood,HTTP Flood,-1,라운드가 시작할 때 적의 어빌리티 북에 <트래픽> 3개와 <핑> 1개를 넣습니다.,[T]E(K>~traffic*3)/E(K>~ping*1),0
 replay_attack,Replay Attack,-1,내 턴이 끝날 때 (0.8 공격력)의 피해를 주고 {반격}을 1 얻습니다.,[E]E(A>A*0.8)/S(M>counter*1),0
 promiscuous_mode,Promiscuous Mode,-1,내 턴이 시작할 때 에너지를 1 얻고 어빌리티를 드로우합니다.,[S]S(E>1)/S(D>1),0
-zeroday_threat,Zero-Day Threat,-1,내 턴이 끝날 때 {공격력}과 {방어력}이 40% 증가합니다.,[E]S(M>attack*Ax0.4)/S(M>defense*Bx0.4),0
-land_attack,LAN Denial Attack,-1,라운드가 시작할 때 적의 어빌리티 북에 <트래픽>을 10개와 <핑> 3개를 넣습니다.,[T]E(K>~traffic*10)/E(K>~ping*3),0
-arp_spoofing,ARP Spoofing,-1,내 턴이 끝날 때 (1.5 공격력)의 피해를 주고 {혼미}를 1 부여합니다.,[E]E(A>A*1.5)/E(M>confusion*1),0
+zeroday_threat,Zero-Day Threat,-1,내 턴이 끝날 때 {공격력}과 {방어력}이 25% 증가합니다.,[E]S(M>attack*Ax0.25)/S(M>defense*Bx0.25),0
+land_attack,LAN Denial Attack,-1,라운드가 시작할 때 적의 어빌리티 북에 <트래픽>을 5개와 <핑> 3개를 넣습니다.,[T]E(K>~traffic*5)/E(K>~ping*3),0
+arp_spoofing,ARP Spoofing,-1,내 턴이 끝날 때 (0.8 공격력)의 피해를 주고 {혼미}를 1 부여합니다.,[E]E(A>A*0.8)/E(M>confusion*1),0
 system_panelty,감블러: 시스템 패널티,-1,전용 어빌리티의 효과가 매우 강력한 대신 턴 시작 시 드로우 개수가 1 감소합니다.,!,0
 system_cosplay,쫀득: 코스프레,-1,제시되는 어빌리티에 다른 여성 스트리머 캐릭터들의 어빌리티가 추가됩니다. 상점에서 다른 상품을 보기 위한 비용이 3을 초과하지 않습니다.,!,0
