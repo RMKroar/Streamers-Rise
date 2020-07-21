@@ -417,7 +417,7 @@ ai_camouflage,미스리프레젠트,0,UT,F,[일회성] 플레이어 캐릭터의
 ~ai_ganggi_shout,야무진 쌍욕,1,AT,N,(0.9 공격력)의 피해를 주고 {혼미}를 1 부여합니다.,E(A>A*0.9)/E(M>confusion*1),roar
 ~ai_ganggi_karisma,카리스마 필드: 모방,3,AT,F,최대 체력의 10%에 해당하는 피해를 주고 동일한 양의 방어를 얻습니다. 에너지를 3 회복합니다.,E(A>H*0.1)/S(B>H*0.1)/S(E>3),void
 ~ai_ganggi_featuring,피처링,1,UT,N,최대 체력의 15%를 회복합니다. 에너지가 1 이상 남아있다면 어빌리티를 2개 드로우합니다.,S(H>H*0.15)/I(E>1)/S(D>2),@
-~ai_ganggi_violence,폭력 예고,0,UT,N,[일회성] 적 최대 체력의 5%만큼 {치명상}을 부여합니다. 어빌리티를 드로우합니다.,[O]E(M>critical_damage*hx0.05)/S(D>1)
+~ai_ganggi_violence,폭력 예고,0,UT,N,[일회성] 적 최대 체력의 5%만큼 {치명상}을 부여합니다. 어빌리티를 드로우합니다.,[O]E(M>critical_damage*hx0.05)/S(D>1),@
 ~ai_badgirl_fist,핵주먹 펀치!,1,AT,N,최대 체력의 5%를 소비하여 저장합니다. (1.2 공격력)의 피해를 줍니다.,S(M>stored_health*Hx0.05)/S(H>-H*0.05)/E(A>A*1.2),hitFire
 ~ai_badgirl_guard,악녀의 든든한 가드,1,UT,N,(0.8 방어력)의 방어를 얻습니다. {저장 체력}이 최대 체력의 10%보다 많다면 추가로 (0.5 방어력)의 방어를 얻습니다.,S(B>B*0.8)/X(stored_health)/I(X>H*0.1)/S(B>B*0.5),@
 ~ai_badgirl_voice,달콤한 목소리를 찾아서,1,UT,F,{저장 체력} 수치만큼 체력을 회복합니다.,!,@
